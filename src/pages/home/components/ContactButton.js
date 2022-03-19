@@ -110,8 +110,10 @@ const StyledButton = styled.div`
 
     button:hover{
         transition: all .5s;
-        transform: rotate(-3deg) scale(1.1);
-        box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+        transform: rotate(-4deg) scale(1.2);
+        box-shadow: 0px 10px 14px rgba(241,162,0,.4);
+        color: ${pr => pr.theme.Yellow}
+
     }
     button:hover span{
         animation-play-state: paused;
