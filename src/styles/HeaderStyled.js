@@ -6,7 +6,9 @@ const HeaderStyled = styled.header `
     max-width: 100%;
     font-family: ${pr => pr.theme.MainFont};
     ${'' /* background-color: ${pr => pr.theme.Blue}; */}
-    background-color: rgba(5, 76, 174, .7);
+    ${'' /* background-color: rgba(5, 76, 174, .7); */}
+    ${'' /* background: linear-gradient(100deg, #373635 0%, #0f2834 45%); */}
+    background: linear-gradient(100deg, #373635 0%, #0d2539 45%);
   
 
     nav{
@@ -14,6 +16,8 @@ const HeaderStyled = styled.header `
         max-width: 100%;
         justify-content: flex-end;
         font-size: 1.2em;
+        position: absolute;
+        width: 100%;
     }
 
     nav a{
@@ -56,7 +60,7 @@ const HeaderStyled = styled.header `
         ${'' /* margin-bottom: 5px; */}
         font-size: 3em;
         text-decoration: none;
-        color: red;
+        top: -4px;
     }
 
     .hamburger{
@@ -81,6 +85,7 @@ const HeaderStyled = styled.header `
             display: flex;
             width: 5%;
             height: auto;
+            color: #97b2d3;
         }
 
         

@@ -16,10 +16,10 @@ function Home() {
       {/* <Icons /> */}
       <div className = 'btn-container'>
         <Link to = "/Contact">
-          <ContactButton />
+          <ContactButton className = 'contact-btn' />
         </Link>
         <Link to = "/About">
-          <AboutMeButton />
+          <AboutMeButton className = 'about-btn' />
         </Link>
       </div>
       

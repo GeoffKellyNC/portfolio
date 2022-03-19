@@ -6,5 +6,5 @@ export default {
     LinkColor: '#8661C1',
     Yellow: '#f0a202',
     Red: '#EE6352',
-    Blue: '#054CAE',
+    Blue: '#97b2d3',
 }

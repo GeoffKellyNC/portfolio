@@ -20,11 +20,12 @@ const Header = (props) => {
         <HeaderStyled className = 'header'>
             <div className = 'git-logo-text'>
                 <a href = "https://github.com/GeoffKellyNC" target = "_blank" rel="noreferrer" >
-                <DiGithubBadge className = 'git-log' />
-                <DiGithubFull className = 'git-text' />
+                <DiGithubBadge className = 'git-log' color = 'white'/>
+                <DiGithubFull className = 'git-text' color = 'white'/>
                 </a>
             </div>
             <GrMenu className = 'hamburger'
+                    color = 'white'
                     onClick = {(e) => hamburgerClick(e)} />
             <nav>
                 {
