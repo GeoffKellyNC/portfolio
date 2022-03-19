@@ -20,6 +20,11 @@ const HomeStyled = styled.div`
             padding-left: 17%;
         }
     }
+
+    @media (max-width: 428px){
+        background-size: contain;
+    }
+
 `
 
 export default HomeStyled;

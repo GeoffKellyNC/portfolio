@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 body{
@@ -10,6 +11,15 @@ body{
     overflow-x: hidden;
     text-decoration: none !important
 }
+
+@media (max-width: 428px){
+    body{
+        width: 62vh;
+        overflow-x: hidden;
+
+    }
+}
+
 
 
 
