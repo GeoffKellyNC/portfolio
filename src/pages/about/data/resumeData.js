@@ -54,7 +54,7 @@ export const resume = [
                 city: 'Pittsburgh',
                 state: 'PA'
             },
-        startDate: 'December 2015',
+        startDate: 'March 2015',
         endDate: 'March 2016',
         icon: <HiBriefcase />,
         description:
