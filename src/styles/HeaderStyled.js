@@ -61,6 +61,7 @@ const HeaderStyled = styled.header `
         font-size: 3em;
         text-decoration: none;
         top: -4px;
+        z-index: 10;
     }
 
     .hamburger{

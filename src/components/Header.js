@@ -20,8 +20,8 @@ const Header = (props) => {
         <HeaderStyled className = 'header'>
             <div className = 'git-logo-text'>
                 <a href = "https://github.com/GeoffKellyNC" target = "_blank" rel="noreferrer" >
-                <DiGithubBadge className = 'git-log' color = 'white'/>
-                <DiGithubFull className = 'git-text' color = 'white'/>
+                    <DiGithubBadge className = 'git-log' color = 'white'/>
+                    <DiGithubFull className = 'git-text' color = 'white'/>
                 </a>
             </div>
             <GrMenu className = 'hamburger'

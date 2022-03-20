@@ -65,6 +65,21 @@ const ResumeStyled = styled.div`
         font-size: 1.5rem;
     }
 
+    @media (max-width: 428px){
+        .desc-container{
+            max-width: 80%;
+        }
+
+        .title{
+            font-size: 1.5rem;
+        }
+
+        .desc{
+            font-size: 0.9rem;
+        }
+
+    }
+
   
 
 `

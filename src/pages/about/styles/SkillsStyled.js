@@ -68,6 +68,18 @@ const SkillsStyled = styled.div`
         }
     }
 
+    @media (max-width: 428px){
+
+        .skill{
+            font-size: 1.5rem;
+        }
+
+        .skills-container {
+            margin-left:10%;
+        }
+
+    }
+
   
 
 
