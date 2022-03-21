@@ -8,6 +8,7 @@ const ResumeStyled = styled.div`
     background-size:     cover;
     background-repeat:   no-repeat;
     font-family: ${pr => pr.theme.MainFont};
+    height: auto;
 
 
     p{
@@ -45,7 +46,7 @@ const ResumeStyled = styled.div`
 
     .resume-item {
         ${'' /* background: rgba(0, 28, 42, 0.25); */}
-        margin: 2% 0;
+        margin-top: 2%;
     }
 
     .resume-item div:nth-of-type(1){
@@ -55,6 +56,10 @@ const ResumeStyled = styled.div`
     .title{
         font-weight: bold;
         font-size: 2rem;
+    }
+
+    .rocket{
+        width: 4%;
     }
 
 
