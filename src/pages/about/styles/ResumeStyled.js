@@ -58,6 +58,10 @@ const ResumeStyled = styled.div`
         font-size: 2rem;
     }
 
+    .rocket{
+        width: 4%;
+    }
+
 
 //? Rocket Icon
     .rocket{
