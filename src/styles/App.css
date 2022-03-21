@@ -12,9 +12,10 @@ body{
     text-decoration: none !important
 }
 
-@media (max-width: 428px){
+@media (max-width: 768px){
     body{
-        width: 62vh;
+        width: 100%;
+        height: 100vh;
         overflow-x: hidden;
 
     }

@@ -136,7 +136,7 @@ export const education = [
         city: 'Online',
         degree: 'Full Stack Web Development',
         date: 'December 2021'
-    }
+    } 
 ]
 
 
