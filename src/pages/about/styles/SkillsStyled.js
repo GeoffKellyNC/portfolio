@@ -8,7 +8,7 @@ const SkillsStyled = styled.div`
     min-height: 40rem;
     background-image: url('https://i.imgur.com/1yW3SSt.jpg');
     background-size:     cover;
-    background-repeat:   no-repeat;
+    ${'' /* background-repeat:   no-repeat; */}
     background-position: center center;
     font-family: ${pr => pr.theme.MainFont};
 
