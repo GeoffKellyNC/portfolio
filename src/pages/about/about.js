@@ -6,7 +6,7 @@ import Education from './components/Education'
 import AboutStyled from './styles/AboutStyled'
 
 
-function about() {
+function About() {
 
   return (
     <AboutStyled>
@@ -17,4 +17,4 @@ function about() {
   )
 }
 
-export default about 
+export default About 
