@@ -126,13 +126,13 @@ export const skills = [
 
 export const education = [
     {
-        name: 'University of North Carolina',
+        school: 'University of North Carolina',
         city: 'Charlotte, NC',
         degree: 'Completed coursework towards Computer Science',
         date: 'May 2017'
     },
     {
-        name: 'Bloom Tech',
+        school: 'Bloom Tech',
         city: 'Online',
         degree: 'Full Stack Web Development',
         date: 'December 2021'
