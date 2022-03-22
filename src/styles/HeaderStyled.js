@@ -5,9 +5,6 @@ import styled from 'styled-components'
 const HeaderStyled = styled.header `
     max-width: 100%;
     font-family: ${pr => pr.theme.MainFont};
-    ${'' /* background-color: ${pr => pr.theme.Blue}; */}
-    ${'' /* background-color: rgba(5, 76, 174, .7); */}
-    ${'' /* background: linear-gradient(100deg, #373635 0%, #0f2834 45%); */}
     background: linear-gradient(100deg, #373635 0%, #0d2539 45%);
   
 
@@ -66,7 +63,7 @@ const HeaderStyled = styled.header `
 
     .hamburger{
         display: none;
-    }
+      }
 
     .btn-container{
         height: 100%;
@@ -86,8 +83,17 @@ const HeaderStyled = styled.header `
             display: flex;
             width: 5%;
             height: auto;
-            color: #97b2d3;
+            color: white;
+            position: relative;
+            left: 50%;
         }
+
+        nav a:hover{
+            transform: scale(1);
+            transition: none;
+
+
+    }
 
         
 
