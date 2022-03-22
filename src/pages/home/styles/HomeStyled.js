@@ -15,14 +15,18 @@ const HomeStyled = styled.div`
         justify-content: space-between;
     }
     @media (max-width: 768px) {
+        height: 100vh;
+        width: 100%;
+
         .btn-container{
             height: 15em;
             padding-left: 17%;
         }
+
     }
 
     @media (max-width: 428px){
-        background-size: contain;
+        background-size: 100%;
     }
 
 `

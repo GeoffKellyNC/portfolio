@@ -5,7 +5,7 @@ import { links } from '../data/headerData'
 
 import HeaderStyled from '../styles/HeaderStyled'
 import { DiGithubBadge, DiGithubFull } from "react-icons/di";
-import { GrMenu } from 'react-icons/gr'
+import { VscMenu } from 'react-icons/vsc'
 import MobileNav from './MobileNav';
 
 const Header = (props) => {
@@ -24,8 +24,7 @@ const Header = (props) => {
                     <DiGithubFull className = 'git-text' color = 'white'/>
                 </a>
             </div>
-            <GrMenu className = 'hamburger'
-                    color = 'white'
+            <VscMenu className = 'hamburger'
                     onClick = {(e) => hamburgerClick(e)} />
             <nav>
                 {

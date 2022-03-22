@@ -1,6 +1,7 @@
 import React from 'react'
 import Resume from './components/Resume'
 import Skills from './components/Skills'
+import Education from './components/Education'
 
 import AboutStyled from './styles/AboutStyled'
 
@@ -11,6 +12,7 @@ function about() {
     <AboutStyled>
         <Resume />
         <Skills />
+        <Education />
     </AboutStyled>
   )
 }
