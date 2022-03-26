@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { send } from 'emailjs-com'
 import StyledContactForm from './styles/FormStyled'
 
+import {EMAIL_JS_KEY, TEMPLATE_ID, SERVICE_ID} from '../../constants'
+
 function ContactForm() {
     const [senderName, setSenderName] = useState('')
     const [senderEmail, setSenderEmail] = useState('')
@@ -22,10 +24,10 @@ function ContactForm() {
     const sendMail = (evt) => {
         evt.preventDefault();
         send(
-            'service_nmhnnvi',
-            'template_up1mgzr',
+            `${SERVICE_ID}`,
+            `${TEMPLATE_ID}`,
             {senderName, senderEmail, message},
-            'a3WaIZCbS3IngdwBh'
+            `${EMAIL_JS_KEY}`
         )
         .then((res) => {
             console.log('Message Sent', res.status, res.text)
