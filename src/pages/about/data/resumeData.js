@@ -3,10 +3,10 @@ import { HiBriefcase } from "react-icons/hi";
 export const resume = [
     {
         title: 'Trust and Safety Analyst ',
-        company: 'Apex Systems',
+        company: 'Epic Games / Apex Systems',
         location: 
             {
-                city: 'Raleigh', 
+                city: 'Cary', 
                 state: 'NC'
             },
         startDate: 'June 2021',
