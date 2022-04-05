@@ -66,7 +66,7 @@ const HeaderStyled = styled.div`
     box-shadow: 0 10px 20px -10px black;
     height: 70px;
 
-    nav {
+    .nav {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -122,9 +122,40 @@ const HeaderStyled = styled.div`
             display: block;
         }
 
-        nav {
+        .nav {
             display: none;
         }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20%;
+            background-color: ${pr => pr.theme.colors.secondary};
+            width: 50%;
+            height: 60%;
+            padding: 0.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px -10px black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            transition: all 0.3s ease-in-out;
+        a {
+            color: white;
+            margin: 2rem 0;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: ${pr => pr.theme.colors.black};
+            }
+        }
+        }
+    }
+
         
 
 `;
