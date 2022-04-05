@@ -9,9 +9,10 @@ export default {
     },
     fonts: {
         primary: '"Poppins", sans-serif',
-        secondary: '"Roboto", sans-serif',
+        secondary: 'Space Mono, monospace',
     },
     fontSizes: {
+        tiny: '1rem',
         small: '1.2rem',
         medium: '1.6rem',
         large: '2.4rem',
