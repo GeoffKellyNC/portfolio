@@ -1,24 +1,14 @@
-import React from 'react'
-import { links } from '../data/headerData'
-import { Link } from 'react-router-dom'
+import React from 'react';
 
-import MobileNavStyled from '../styles/MobileNavStyled'
 
-function MobileNav() {
 
-  return (
-      <MobileNavStyled className = 'mobile-nav'>
-          {
-            links.map(link =>{
-                return(
-                    <Link to = {link.to} 
-                        className = 'mobile-link'
-                    >{link.name}</Link>
-                )
-            })
-          }
-      </MobileNavStyled>
-  )
+const MobileNav = () => {
+    return (
+        <div>
+            <h1>MobileNav</h1>
+        </div>
+    )
 }
 
-export default MobileNav
+
+export default MobileNav;

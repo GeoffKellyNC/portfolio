@@ -1,20 +1,18 @@
-import './styles/App.css';
+import './App.css';
 import { Route } from 'react-router-dom'
 
-import Home from './pages/home/Home'
+//!--Components --//
 import Header from './components/Header'
-import Contact from './pages/contact/Contact'
-import About from './pages/about/About'
-import Projects from './pages/projects/Projects'
+
+
 
 function App() {
   return (
     <div className="App">
-    <Header />
-    <Route exact path = '/' component = {Home} />
-    <Route path = '/Projects/' component = {Projects} />
-    <Route path = '/Contact' component = {Contact} />
-    <Route path = '/About' component = {About} />
+      <div className = 'header-container'>
+        <Header />
+      </div>
+
 
     </div>
   );
