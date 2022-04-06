@@ -14,6 +14,9 @@ import Projects from './components/Projects'
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';
 
+//!-- Importing Resume PDF --//
+import resume from './data/geoffrey-kelly-resume.pdf'
+
 
 
 function App() {
@@ -40,9 +43,11 @@ function App() {
             <div className = 'about-paragraph'>
               <p className = 'text'> I am a software engineer specializing in building (and occasionally designing) full stack applications. I have a passion for problem solving and a love for learning new technologies. I am currently looking for ways to continue to grow my abilities. </p>
             </div>
-            <div className = 'resume-btn'>
-              <span className = 'resume-text'>RESUME</span>
-            </div>
+            <a href = {resume} target = '_blank' rel="noreferrer" className = 'resume-link' >
+              <div className = 'resume-btn'>
+                <span className = 'resume-text'>RESUME</span>
+              </div>
+            </a>
         </div>
       </section>
       <section className = 'projects-container'>
@@ -118,6 +123,10 @@ const StyledApp = styled.div`
     color: white;
     margin: 2rem 0;
     border-radius: 8px;
+  }
+
+  .resume-link{
+    text-decoration: none;
   }
 
   .resume-btn:hover {
