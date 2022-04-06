@@ -10,9 +10,9 @@ export const navData = [
     },
     {   
         id: 2,
-        name: 'ABOUT',
-        to: '/about',
-        className: 'nav-link nav-about',
+        name: 'CONTACT',
+        to: '/contact',
+        className: 'nav-link nav-contact',
         num: '02'
     },
     {   id: 3,
@@ -23,9 +23,9 @@ export const navData = [
     },
     {   
         id: 4,
-        name: 'CONTACT',
-        to: '/Contact',
-        className: 'nav-link nav-contact',
+        name: 'ABOUT',
+        to: '/about',
+        className: 'nav-link nav-about',
         num: '04'
     }
 

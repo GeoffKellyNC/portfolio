@@ -11,12 +11,12 @@ import Project from './Project';
 
 
 
-const Projects = () => {
+const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
 
     return(
         <StyledProjects className = 'project-container'>
-            <div className = 'project-title'>
+            <div ref = {projectsRef} className = 'project-title'>
                 <h1>
                     <span className = 'num-title'>01.</span>
                 Projects</h1>

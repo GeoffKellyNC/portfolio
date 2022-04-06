@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef  } from 'react'
 import './App.css';
 import { Route } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import Header from './components/Header'
 import SocialIcons from './components/SocialIcons'
 import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';
@@ -20,11 +21,33 @@ import resume from './data/geoffrey-kelly-resume.pdf'
 
 
 function App() {
+  //!--State--//
   const [icons] = useState(socialIcons);
+
+  //!--Refs--//
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const handleProjectClick = () => {
+    projectsRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
+  const handleContactClick = () => {
+    contactRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
+
+
   return (
     <StyledApp className="App">
       <div className = 'header-container'>
-        <Header />
+        <Header handleProjectClick = {handleProjectClick} handleContactClick = {handleContactClick} />
       </div>
       
       <SocialIcons icons = {icons}/>
@@ -51,7 +74,10 @@ function App() {
         </div>
       </section>
       <section className = 'projects-container'>
-        <Projects />
+        <Projects projectsRef = {projectsRef} />
+      </section>
+      <section className = 'contact-container'>
+        <Contact contactRef = {contactRef} />
       </section>
 
 

@@ -71,6 +71,12 @@ const StyledProject = styled.div`
         font-size: 5rem;
     }
 
+    .github-icon:hover {
+        color: ${pr => pr.theme.colors.primary};
+        transform: scale(1.2);
+        transition: .2s ease-in-out;
+   }
+
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;

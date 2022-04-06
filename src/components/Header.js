@@ -22,11 +22,22 @@ import { BiMenuAltLeft } from 'react-icons/bi';
 
 
 
-const Header = () => {
+const Header = ({ handleProjectClick, handleContactClick }) => {
     //! State for Mobile Menu
     const [isOpen, setIsOpen] = useState(false);
 
 
+    //! Handling Clicks based on their text content. Functions determined by UseRef
+    const handleClick = (e) => {
+        console.log(e.target.textContent)
+        if (e.target.textContent === 'PROJECTS' || e.target.textContent === '01') {
+           return handleProjectClick();
+        }
+        if (e.target.textContent === 'CONTACT' || e.target.textContent === '02') {
+            return handleContactClick();
+        }
+
+    }
 
 
     return (
@@ -40,9 +51,13 @@ const Header = () => {
                 {
                     navData.map(item => {
                         return(
-                            <NavLink key={item.id} to={item.to} className={item.className}>
-                                <span className = 'num'>{item.num}</span>
-                                <span className = 'name'>{item.name}</span>
+                            <NavLink 
+                                key={item.id} 
+                                to={item.to} 
+                                className={item.className}
+                                onClick = {(e) => handleClick(e)}>
+                                <span name = {item.num} className = 'num'>{item.num}</span>
+                                <span name = {item.name} className = 'name'>{item.name}</span>
                             </NavLink>
                         )
                     })
