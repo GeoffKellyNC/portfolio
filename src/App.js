@@ -1,6 +1,5 @@
 import React, { useState, useRef  } from 'react'
 import './App.css';
-import { Route } from 'react-router-dom'
 
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
