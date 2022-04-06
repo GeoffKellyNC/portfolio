@@ -4,21 +4,17 @@ import styled from 'styled-components';
 
 const Project = ({ projectData }) => {
     return(
-        projectData.map(project => {
-            return(
-                <StyledProject className = 'project-card-container'>
-                    <img
-                        src = {project.imageSrc}
-                        alt = 'Project Screenshot'
-                        className = 'project-card-img' />
-                    <div className = 'project-card-text'>
-                        <h2>PROJECT NAME:</h2><span>{project.title}</span>
-                        <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
-                        <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{project.technologies.join(', ')}</p>
-                    </div>
-                </StyledProject>
-            )
-        })
+        <StyledProject className = 'project-card-container'>
+            <img
+                src = {projectData.imageSrc}
+                alt = 'Project Screenshot'
+                className = 'project-card-img' />
+            <div className = 'project-card-text'>
+                <h2>PROJECT NAME:</h2><span>{projectData.title}</span>
+                <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{projectData.description}</p>
+                <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{projectData.technologies.join(', ')}</p>
+            </div>
+        </StyledProject>
     )
 } 
 

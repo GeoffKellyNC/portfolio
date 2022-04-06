@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 //! -- Importing Project Images -- //
-import stewartFastenerHome from '../images/stewart-fastener.webp';
 
 //! -- Import Project Data -- //
 import { projectData } from '../data/projectsData';
@@ -13,6 +12,8 @@ import Project from './Project';
 
 
 const Projects = () => {
+    const [projectInfo] = useState(projectData);
+
     return(
         <StyledProjects className = 'project-container'>
             <div className = 'project-title'>
@@ -20,10 +21,13 @@ const Projects = () => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-
-            <Project 
-                projectData = {projectData} />
-
+            {
+                projectInfo.map(project => {
+                    return(
+                        <Project projectData = {project} key = {project.id} />
+                    )
+                })
+            }
         </StyledProjects>
     )
 }
