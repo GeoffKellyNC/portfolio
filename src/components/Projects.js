@@ -4,6 +4,11 @@ import styled from 'styled-components';
 //! -- Importing Project Images -- //
 import stewartFastenerHome from '../images/stewart-fastener.webp';
 
+//! -- Import Project Data -- //
+import { projectData } from '../data/projectsData';
+
+import Project from './Project';
+
 
 
 
@@ -13,15 +18,18 @@ const Projects = () => {
             <div className = 'project-title'>
                 <h1><span className = 'num-title'>01.</span>Projects</h1>
             </div>
-            <div className = 'project-1-container'>
+            {/* <div className = 'project-1-container'>
                 <img 
                     src = {stewartFastenerHome} 
                     alt = 'Stewart Fastener' 
                     className = 'project-1-img'/>
                 <div className = 'project-1-text'>
                     <h2>PROJECT NAME:</h2><span>Stewart Fasteners</span>
+                    <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>Stewart Fasteners is a full stack application that allows users to create, edit, and delete fasteners. Users can also view fasteners that have been created by other users.</p>
+                    <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>ReactJS, VSCode, Git, API, NODE, JavaScript</p>
                 </div>
-            </div>
+            </div> */}
+            <Project projectData = {projectData} />
         </StyledProjects>
     )
 }
@@ -61,13 +69,12 @@ const StyledProjects = styled.div`
         background-color: ${pr => pr.theme.colors.primary};
     }
 
-    .project-1-container {
+    ${'' /* .project-1-container {
         border: 1px solid ${pr => pr.theme.colors.primary};
-        width: 80%;
+        width: 70%;
         margin: auto;
         border-radius: 5px;
         display: flex;
-        gap: 1em;
     }
   
     .project-1-img {
@@ -79,7 +86,11 @@ const StyledProjects = styled.div`
 
     .project-1-text {
         display: flex;
-        margin-top: 2.3em;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 8%;
+        gap: 3em;
     }
 
     .project-1-text h2 {
@@ -90,6 +101,10 @@ const StyledProjects = styled.div`
         font-size: ${pr => pr.theme.fontSizes.small};
         margin-top: 5px;
     }
+
+    .project-desc{
+        width: 80%;
+    } */}
 
 
     @media (max-width: 768px) {
@@ -102,25 +117,33 @@ const StyledProjects = styled.div`
         .box {
             width: 300px;
         }
+        .project-1-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+        }
+
+        .project-1-text{
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .project-1-img {
+            width: 250px;
+            height: 400px;
+            margin-top: 2em;
+        }
+
+        .project-desc{
+            margin-top: 1em;
+        }
     }
 
-    .project-1-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+    
 
-    .project-1-text{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .project-1-img {
-        width: 250px;
-        height: 400px;
-        margin-top: 2em;
-    }
 
 
 `
