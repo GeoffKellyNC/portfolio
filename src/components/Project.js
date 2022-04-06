@@ -2,6 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { FaGithubSquare } from 'react-icons/fa';
+
 const Project = ({ projectData }) => {
     return(
         <StyledProject className = 'project-card-container'>
@@ -13,7 +15,11 @@ const Project = ({ projectData }) => {
                 <h2>PROJECT NAME:</h2><span>{projectData.title}</span>
                 <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{projectData.description}</p>
                 <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{projectData.technologies.join(', ')}</p>
+                <a href = {projectData.githubLink}>
+                    <FaGithubSquare className = 'github-icon'  />
+                </a>
             </div>
+
         </StyledProject>
     )
 } 
@@ -60,6 +66,11 @@ const StyledProject = styled.div`
         width: 80%;
     }
 
+    .github-icon {
+        color: ${pr => pr.theme.colors.secondary};
+        font-size: 5rem;
+    }
+
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -82,6 +93,10 @@ const StyledProject = styled.div`
 
         .project-desc{
             margin-top: 1em;
+        }
+
+        .github-icon {
+            font-size: 3rem;
         }
     }
 

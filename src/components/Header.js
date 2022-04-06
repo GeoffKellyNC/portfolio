@@ -33,6 +33,7 @@ const Header = () => {
         <HeaderStyled>
             <BiMenuAltLeft 
                 size = {"5em"}
+                color = {'white'}
                 className = 'ham-icon'
                 onClick = {() => setIsOpen(!isOpen)} />
             <nav className = 'nav'>
