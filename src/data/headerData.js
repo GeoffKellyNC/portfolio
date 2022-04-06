@@ -1,28 +1,32 @@
 
 
-export const links = [
+export const navData = [
     {   
         id: 1,
-        name: 'HOME',
-        to: '/',
-        className: 'nav-link nav-home'
+        name: 'PROJECTS',
+        to: '/projects',
+        className: 'nav-link nav-projects',
+        num: '01'
     },
     {   
         id: 2,
-        name: 'PROJECTS',
-        to: '/Projects',
-        className: 'nav-link nav-projects'
+        name: 'CONTACT',
+        to: '/contact',
+        className: 'nav-link nav-contact',
+        num: '02'
     },
     {   id: 3,
         name: 'RESUME',
-        to: '/About',
-        className: 'nav-link nav-about'
+        to: '/resume',
+        className: 'nav-link nav-about',
+        num: '03'
     },
     {   
         id: 4,
-        name: 'CONTACT',
-        to: '/Contact',
-        className: 'nav-link nav-contact'
+        name: 'ABOUT',
+        to: '/about',
+        className: 'nav-link nav-about',
+        num: '04'
     }
 
     // {

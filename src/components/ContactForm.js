@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { send } from 'emailjs-com'
-import StyledContactForm from './styles/FormStyled'
+import styled from 'styled-components'
 
-import {EMAIL_JS_KEY, TEMPLATE_ID, SERVICE_ID} from '../../constants'
+import {EMAIL_JS_KEY, TEMPLATE_ID, SERVICE_ID} from '../constants'
 
 function ContactForm() {
     const [senderName, setSenderName] = useState('')
@@ -71,3 +71,53 @@ function ContactForm() {
 }
 
 export default ContactForm
+
+
+const StyledContactForm = styled.form`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 80%;
+        margin: 0 auto;
+        ${'' /* border: 1px solid ${props => props.theme.colors.primary}; */}
+    input{
+        margin-bottom: 5%;
+    }
+    .input-box{
+        border:0;
+        border-bottom:1px solid ${pr => pr.theme.colors.primary};  
+        background:transparent;
+        width:100%;
+        padding:8px 0 5px 0;
+        font-size:16px;
+    }
+    input::placeholder {
+        color: ${pr => pr.theme.colors.secondary};
+        font-family: ${pr => pr.theme.MainFont}
+    }
+    textarea {
+        color: white;
+    }
+    textarea::placeholder {
+        color: ${pr => pr.theme.colors.secondary};
+        font-family: ${pr => pr.theme.MainFont}
+    }
+    button{
+        border: 1px solid ${pr => pr.theme.colors.primary};
+        width: 25%;
+        height: 40px;
+        background: none;
+        margin: 2rem 0;
+        border-radius: 8px;
+        color: ${pr => pr.theme.colors.secondary};
+    }
+
+    button:hover {
+        background-color: ${pr => pr.theme.colors.secondary};
+        color: ${pr => pr.theme.colors.primary};
+        transition: all 0.3s ease-in-out;
+        transform: scale(1.1);
+        cursor: pointer;
+
+}
+`
