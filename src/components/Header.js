@@ -62,7 +62,6 @@ export default Header;
 const HeaderStyled = styled.div`  
     display: flex;
     background-color: ${pr => pr.theme.colors.black};  
-    color: white;
     box-shadow: 0 10px 20px -10px black;
     height: 70px;
 
@@ -78,21 +77,20 @@ const HeaderStyled = styled.div`
         font-family: ${pr => pr.theme.fonts.secondary};
         font-size: ${pr => pr.theme.fontSizes.medium};
         font-weight: ${pr => pr.theme.fontWeights.normal};
-        color: white;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: all 0.3s ease-in-out;
-        a {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease-in-out;
-            &:hover {
-                color: ${pr => pr.theme.colors.secondary};
-            }
-        }
+    }
+
+    .nav a {
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;    
+    }
+    .nav a:hover {
+        color: ${pr => pr.theme.colors.secondary};
     }
 
     span {
@@ -101,7 +99,6 @@ const HeaderStyled = styled.div`
         font-family: ${pr => pr.theme.fonts.primary};
         font-size: ${pr => pr.theme.fontSizes.small};
         font-weight: ${pr => pr.theme.fontWeights.light};
-        color: white;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 1px;

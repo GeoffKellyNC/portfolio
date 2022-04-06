@@ -40,9 +40,12 @@ function App() {
             <div className = 'about-paragraph'>
               <p className = 'text'> I am a software engineer specializing in building (and occasionally designing) full stack applications. I have a passion for problem solving and a love for learning new technologies. I am currently looking for ways to continue to grow my abilities. </p>
             </div>
+            <div className = 'resume-btn'>
+              <span className = 'resume-text'>RESUME</span>
+            </div>
         </div>
       </section>
-      <section className = 'about-me-container'>
+      <section className = 'projects-container'>
         <Projects />
       </section>
 
@@ -108,11 +111,34 @@ const StyledApp = styled.div`
     margin-bottom: 1rem;
   }
 
+
+  //!-- Resume Button --//
+  .resume-btn {
+    border: 1px solid ${pr => pr.theme.colors.primary};
+    color: white;
+    margin: 2rem 0;
+    border-radius: 8px;
+  }
+
+  .resume-btn:hover {
+    background-color: ${pr => pr.theme.colors.secondary};
+    transition: 0.2s;
+  }
+
+  .resume-text {
+    font-size: ${pr => pr.theme.fontSizes.small};
+    font-weight: bold;
+    color: ${pr => pr.theme.colors.primary};
+    font-family: ${pr => pr.theme.fonts.secondary};
+    padding: 0.5rem 1rem;
+  }
+
   @media (max-width: 768px) {
 
 
     .top-text-container {
       margin-left: 1rem;
+      margin-top: 0;
     }
 
     .top-text-container p {
