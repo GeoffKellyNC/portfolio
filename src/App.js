@@ -9,6 +9,7 @@ import styled from 'styled-components';
 //!--Components --//
 import Header from './components/Header'
 import SocialIcons from './components/SocialIcons'
+import Projects from './components/Projects'
 
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';
@@ -25,7 +26,7 @@ function App() {
       
       <SocialIcons icons = {icons}/>
 
-      <div className = 'content-container'>
+      <section className = 'content-container'>
         <div className = 'top-text-container'>
           <div className = 'hi-text'>
               <h1 className = 'text'>Hi, my name is</h1>
@@ -40,7 +41,10 @@ function App() {
               <p className = 'text'> I am a software engineer specializing in building (and occasionally designing) full stack applications. I have a passion for problem solving and a love for learning new technologies. I am currently looking for ways to continue to grow my abilities. </p>
             </div>
         </div>
-      </div>
+      </section>
+      <section className = 'about-me-container'>
+        <Projects />
+      </section>
 
 
     </StyledApp>
@@ -59,6 +63,7 @@ const StyledApp = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10em;
   }
   
 
@@ -78,13 +83,13 @@ const StyledApp = styled.div`
     font-family: ${pr => pr.theme.fonts.secondary};
   }
   .top-text-container h2 {
-    font-size: ${pr => pr.theme.fontSizes.medium};
+    font-size: ${pr => pr.theme.fontSizes.extraLarge};
     color: white;
     font-family: ${pr => pr.theme.fonts.primary};
   }
 
   .top-text-container h3 {
-    font-size: ${pr => pr.theme.fontSizes.medium};
+    font-size: ${pr => pr.theme.fontSizes.large};
     color: ${pr => pr.theme.colors.secondary};
     font-family: ${pr => pr.theme.fonts.primary};
     font-weight: 300;
@@ -96,6 +101,7 @@ const StyledApp = styled.div`
     font-family: ${pr => pr.theme.fonts.primary};
     font-weight: 300;
     max-width: 50em;
+    padding-top: 2em;
   }
 
   .text{
@@ -113,11 +119,12 @@ const StyledApp = styled.div`
       max-width: 90%;
       margin: auto;
       margin-left: 0;
-
-
-
-
   }
+
+
+  //! -- AboutMe Section -- //
+
+ 
   
 
 

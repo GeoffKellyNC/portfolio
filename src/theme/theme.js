@@ -16,6 +16,7 @@ export default {
         small: '1.2rem',
         medium: '1.6rem',
         large: '2.4rem',
+        extraLarge: '3.2rem',
     },
     fontWeights: {
         light: 300,

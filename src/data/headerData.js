@@ -3,21 +3,21 @@
 export const navData = [
     {   
         id: 1,
-        name: 'HOME',
-        to: '/',
-        className: 'nav-link nav-home',
+        name: 'PROJECTS',
+        to: '/projects',
+        className: 'nav-link nav-projects',
         num: '01'
     },
     {   
         id: 2,
-        name: 'PROJECTS',
-        to: '/Projects',
-        className: 'nav-link nav-projects',
+        name: 'ABOUT',
+        to: '/about',
+        className: 'nav-link nav-about',
         num: '02'
     },
     {   id: 3,
         name: 'RESUME',
-        to: '/About',
+        to: '/resume',
         className: 'nav-link nav-about',
         num: '03'
     },

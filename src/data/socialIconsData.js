@@ -17,30 +17,35 @@ export const socialIcons = [
         id: uuid(),
         name: 'Github',
         icon: <FaGithubAlt />,
-        link: 'https://github.com/GeoffKellyNC'
+        link: 'https://github.com/GeoffKellyNC',
+        alt: 'Github Icon'
     },
     {
         id: uuid(),
         name: 'LinkedIn',
         icon: <AiOutlineLinkedin />,
-        link: 'https://www.linkedin.com'
+        link: 'https://www.linkedin.com',
+        alt: 'LinkedIn Icon'
     },
     {
         id: uuid(),
         name: 'Twitter',
         icon: <FaTwitter />,
-        link: 'https://twitter.com'
+        link: 'https://twitter.com',
+        alt: 'Twitter Icon'
     },
     {
         id: uuid(),
         name: 'Instagram',
         icon: <ImInstagram />,
-        link: 'https://www.instagram.com'
+        link: 'https://www.instagram.com',
+        alt: 'Instagram Icon'
     },
     {
         id: uuid(),
         name: 'Email',
         icon: <MdEmail />,
-        link: '#'
+        link: '#',
+        alt: 'Email Icon'
     }
 ]
