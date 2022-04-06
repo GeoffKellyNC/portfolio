@@ -20,7 +20,7 @@ const Project = ({ projectData }) => {
             )
         })
     )
-}
+} 
 
 
 export default Project;
