@@ -64,5 +64,29 @@ const StyledProject = styled.div`
         width: 80%;
     }
 
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+
+
+        .project-card-text{
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .project-card-img {
+            width: 250px;
+            height: 400px;
+            margin-top: 2em;
+        }
+
+        .project-desc{
+            margin-top: 1em;
+        }
+    }
 
 `
