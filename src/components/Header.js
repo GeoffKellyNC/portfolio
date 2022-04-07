@@ -79,7 +79,7 @@ const HeaderStyled = styled.div`
     ${'' /* display: flex; */}
     background-color: ${pr => pr.theme.colors.black};  
     box-shadow: 0 10px 20px -10px black;
-    height: 70px;
+    height: 60px;
     position: fixed;
     display: flex;
     justify-content: space-between;
