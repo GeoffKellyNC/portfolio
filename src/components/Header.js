@@ -47,7 +47,7 @@ const Header = ({ handleProjectClick, handleContactClick }) => {
     return (
         <HeaderStyled>
             {
-                !isOpen ? <BiMenuAltLeft size = {"5em"} color = {'white'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} /> : <AiOutlineClose size = {"3em"} color = {'white'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} />
+                !isOpen ? <BiMenuAltLeft size = {"5em"} color = {'#F0A202'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} /> : <AiOutlineClose size = {"3em"} color = {'#EE6352'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} />
             }
             <nav className = 'nav'>
                 {
@@ -146,7 +146,7 @@ const HeaderStyled = styled.div`
 
     @media (max-width: 670px) {
         .ham-icon {
-            display: block;
+            display: flex;
         }
 
         .nav {

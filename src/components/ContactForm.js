@@ -105,10 +105,11 @@ const StyledContactForm = styled.form`
         ${'' /* border: 1px solid ${props => props.theme.colors.primary}; */}
     input{
         margin-bottom: 5%;
+        color: white;
     }
     .input-box{
         border:0;
-        border-bottom:1px solid ${pr => pr.theme.colors.primary};  
+        border-bottom:2px solid ${pr => pr.theme.colors.primary};  
         background:transparent;
         width:100%;
         padding:8px 0 5px 0;
