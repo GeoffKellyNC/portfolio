@@ -74,7 +74,7 @@ const StyledProject = styled.div`
     .github-icon:hover {
         color: ${pr => pr.theme.colors.primary};
         transform: scale(1.2);
-        transition: .2s ease-in-out;
+        transition: all .2s ease-in-out;
    }
 
     @media (max-width: 768px) {

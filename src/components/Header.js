@@ -64,7 +64,7 @@ const Header = ({ handleProjectClick, handleContactClick }) => {
                 }
             </nav>
             {
-                isOpen && <MobileNav />
+                isOpen && <MobileNav  handleClick = {handleClick} setIsOpen = {setIsOpen}/>
             }
         </HeaderStyled>
     )
@@ -76,13 +76,25 @@ export default Header;
 //!--Styled Components --//
 
 const HeaderStyled = styled.div`  
-    display: flex;
+    ${'' /* display: flex; */}
     background-color: ${pr => pr.theme.colors.black};  
     box-shadow: 0 10px 20px -10px black;
     height: 70px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%; 
+    margin: auto;
+    top: 0;
 
     .nav {
         display: flex;
+        position: sticky;
+        top: 0;
         justify-content: space-around;
         align-items: center;
         width: 100%;

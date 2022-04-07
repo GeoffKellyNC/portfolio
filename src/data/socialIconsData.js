@@ -24,7 +24,7 @@ export const socialIcons = [
         id: uuid(),
         name: 'LinkedIn',
         icon: <AiOutlineLinkedin />,
-        link: 'https://www.linkedin.com',
+        link: 'https://www.linkedin.com/in/geoffkelly/',
         alt: 'LinkedIn Icon'
     },
     {
