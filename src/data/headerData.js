@@ -4,27 +4,27 @@ export const navData = [
     {   
         id: 1,
         name: 'PROJECTS',
-        to: '/projects',
+        to: '/',
         className: 'nav-link nav-projects',
         num: '01'
     },
     {   
         id: 2,
         name: 'CONTACT',
-        to: '/contact',
+        to: '/',
         className: 'nav-link nav-contact',
         num: '02'
     },
     {   id: 3,
         name: 'RESUME',
-        to: '/resume',
+        to: '/',
         className: 'nav-link nav-about',
         num: '03'
     },
     {   
         id: 4,
         name: 'ABOUT',
-        to: '/about',
+        to: '/',
         className: 'nav-link nav-about',
         num: '04'
     }
