@@ -1,4 +1,4 @@
-import React, { useState, useRef  } from 'react'
+import React, { useState, useRef, useEffect  } from 'react'
 import './App.css';
 
 //!--Importing Styled Components --// <--At bottom of file --
@@ -17,16 +17,22 @@ import { socialIcons } from './data/socialIconsData';
 //!-- Importing Resume PDF --//
 import resume from './data/geoffrey-kelly-resume.pdf'
 
+//!-- Importing Site Loader --//
+import RingLoader from "react-spinners/RingLoader";
+
 
 
 function App() {
   //!--State--//
   const [icons] = useState(socialIcons);
+  const [loading, setLoading] = useState(true);
 
   //!--Refs--//
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
+
+//!-- Click Handlers --//
   const handleProjectClick = () => {
     projectsRef.current.scrollIntoView({
       behavior: 'smooth',
@@ -41,45 +47,63 @@ function App() {
     })
   }
 
+  //!-- Site Pre Loader --//
+
+  useEffect(() => {
+
+    setTimeout(() => {
+        setLoading(!loading)
+    }, 2000);
+
+  },[])
+
 
 
   return (
     <StyledApp className="App">
-      <div className = 'header-container'>
-        <Header handleProjectClick = {handleProjectClick} handleContactClick = {handleContactClick} />
-      </div>
-      
-      <SocialIcons icons = {icons}/>
-
-      <section className = 'content-container'>
-        <div className = 'top-text-container'>
-          <div className = 'hi-text'>
-              <h1 className = 'text'>Hi, my name is</h1>
-            </div>
-            <div className = 'name-text'>
-              <h2 className = 'text'>Geoff Kelly</h2>
-            </div>
-            <div className = 'statement-text'>
-              <h3> Problem Solver. Full Stack Developer</h3>
-            </div>
-            <div className = 'about-paragraph'>
-              <p className = 'text'> I am a software engineer specializing in building (and occasionally designing) full stack applications. I have a passion for problem solving and a love for learning new technologies. I am currently looking for ways to continue to grow my abilities. </p>
-            </div>
-            <a href = {resume} target = '_blank' rel="noreferrer" className = 'resume-link' >
-              <div className = 'resume-btn'>
-                <span className = 'resume-text'>RESUME</span>
-              </div>
-            </a>
+      {
+        loading ?                      //!-- Loading Screen --//
+        <div className = 'loader'>
+          <RingLoader
+            color = {'red'}
+            loading = {loading} 
+            size = {"10em"} /> 
         </div>
-      </section>
-      <section className = 'projects-container'>
-        <Projects projectsRef = {projectsRef} />
-      </section>
-      <section className = 'contact-container'>
-        <Contact contactRef = {contactRef} />
-      </section>
-
-
+        :
+        <>
+          <div className='header-container'>
+              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} />
+            </div><SocialIcons icons={icons} />
+              <section className='content-container'>
+                <div className='top-text-container'>
+                  <div className='hi-text'>
+                    <h1 className='text'>Hi, my name is</h1>
+                  </div>
+                  <div className='name-text'>
+                    <h2 className='text'>Geoff Kelly</h2>
+                  </div>
+                  <div className='statement-text'>
+                    <h3> Problem Solver. Full Stack Developer</h3>
+                  </div>
+                  <div className='about-paragraph'>
+                    <p className='text'> I am a software engineer specializing in building (and occasionally designing) full stack applications.I have a passion for problem solving and a love for learning new technologies.I am currently looking for ways to continue to grow my abilities.</p>
+                  </div>
+                  <a href={resume} target='_blank' rel="noreferrer" className='resume-link'>
+                    <div className='resume-btn'>
+                      <span className='resume-text'>RESUME</span>
+                    </div>
+                  </a>
+                </div>
+              </section>
+                <section className='projects-container'>
+                  <Projects projectsRef={projectsRef} />
+                </section>  
+                <section className='contact-container'>
+                  <Contact contactRef={contactRef} />
+                </section>
+            </>
+ 
+      }
     </StyledApp>
   );
 }
@@ -165,6 +189,13 @@ const StyledApp = styled.div`
     color: ${pr => pr.theme.colors.primary};
     font-family: ${pr => pr.theme.fonts.secondary};
     padding: 0.5rem 1rem;
+  }
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
   @media (max-width: 768px) {
