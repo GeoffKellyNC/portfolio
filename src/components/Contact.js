@@ -48,5 +48,21 @@ const ContactStyled = styled.div`
         margin-right: 0.5em;
         color: ${pr => pr.theme.colors.secondary};
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .contact-title {
+        margin-top: 5em;
+        margin-left: 4em;
+    }
+
+    h1::after{
+        width: 100px;
+    }
+
     
 `

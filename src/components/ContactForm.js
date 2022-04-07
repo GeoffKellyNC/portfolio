@@ -118,6 +118,12 @@ const StyledContactForm = styled.form`
         transition: all 0.3s ease-in-out;
         transform: scale(1.1);
         cursor: pointer;
+    }
 
-}
+    @media (max-width: 768px) {
+        width: 100%;
+        input{
+            width: 100%;
+
+    }
 `

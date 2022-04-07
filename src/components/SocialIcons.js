@@ -16,9 +16,9 @@ const SocialIcons = ({icons}) => {
                     icons.map(icon => {
                         return(
                             <li key = {icon.id}>
-                                <NavLink to = {icon.link} className = {`${icon.name}-icon icon`}>
+                            <a href = {icon.link} className = {`${icon.name}-icon icon`} target = "_blank" rel="noreferrer" >
                                     {icon.icon}
-                                </NavLink>
+                                </a>
                             </li>
                         )
                     })
@@ -57,11 +57,19 @@ const StyledIcons = styled.div`
         background-color: ${pr => pr.theme.colors.primary};
     }
 
+    .Email-icon::after:hover {
+        background-color: ${pr => pr.theme.colors.primary};
+    }
+
 
     .icon{
         font-size: 1.3rem;
         margin: 0.5rem;
         color: ${pr => pr.theme.colors.primary};
+    }
+
+    .icon:hover{
+        color: ${pr => pr.theme.colors.secondary};
     }
 
     @media (max-width: 956px) {
