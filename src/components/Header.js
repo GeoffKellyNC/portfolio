@@ -15,6 +15,7 @@ import { navData } from '../data/headerData';
 
 //!-- Importing Mobile Menu icon --//
 import { BiMenuAltLeft } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai';
 
 
 
@@ -45,11 +46,9 @@ const Header = ({ handleProjectClick, handleContactClick }) => {
 
     return (
         <HeaderStyled>
-            <BiMenuAltLeft 
-                size = {"5em"}
-                color = {'white'}
-                className = 'ham-icon'
-                onClick = {() => setIsOpen(!isOpen)} />
+            {
+                !isOpen ? <BiMenuAltLeft size = {"5em"} color = {'white'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} /> : <AiOutlineClose size = {"3em"} color = {'white'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} />
+            }
             <nav className = 'nav'>
                 {
                     navData.map(item => {
