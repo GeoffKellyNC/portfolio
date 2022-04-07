@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { send } from 'emailjs-com'
 import styled from 'styled-components'
 
@@ -8,6 +8,8 @@ function ContactForm() {
     const [senderName, setSenderName] = useState('')
     const [senderEmail, setSenderEmail] = useState('')
     const [message, setMessage] = useState('')
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState(false)
 
     const handelName = (evt) => {
         setSenderName(evt.target.value)
@@ -31,6 +33,7 @@ function ContactForm() {
         )
         .then((res) => {
             console.log('Message Sent', res.status, res.text)
+            res.status === 200 ? setSuccess(true) : setError('Something went wrong')
         })
         .catch((err) => console.err('Failed', err))
         setSenderName('');
@@ -38,35 +41,55 @@ function ContactForm() {
         setMessage('');
     }
 
+
+    //! -- Setting timeout for success message
+    useEffect(() => {
+        if (success) {
+            setTimeout(() => {
+                setSuccess(false)
+            }, 3000)
+        }
+        if (error) {
+            setTimeout(() => {
+                setError('')
+            }, 3000)
+        }
+    }, [success, error])
+
   return (
-        <StyledContactForm onSubmit={sendMail} className = 'contact-form'>
-            <input type = 'text' 
-                name = 'senderName' 
-                value = {senderName} 
-                required 
-                placeholder = 'Name'
-                onChange = {handelName}
-                className = 'input-box'
-                 />
-            <input type = 'email' 
-                name = 'senderEmail' 
-                value = {senderEmail} 
-                required 
-                placeholder = 'Email'
-                onChange = {handelEmail}
-                className = 'input-box'
-                 />
-            <textarea name = 'message' 
-                value = {message} 
-                required 
-                placeholder = 'Message' 
-                onChange = {handelMessage}
-                className = 'input-box'
-                rows = '5'
-                cols = '40'
-                />
-            <button type = 'submit' className = 'btn'>Submit</button>
-        </StyledContactForm>
+        <>
+            {
+                success ? <span>Message Sent!</span> : error ? <span>{error}</span> : null
+            }
+            <StyledContactForm onSubmit={sendMail} className = 'contact-form'>
+                <input type = 'text' 
+                    name = 'senderName' 
+                    value = {senderName} 
+                    required 
+                    placeholder = 'Name'
+                    onChange = {handelName}
+                    className = 'input-box'
+                    />
+                <input type = 'email' 
+                    name = 'senderEmail' 
+                    value = {senderEmail} 
+                    required 
+                    placeholder = 'Email'
+                    onChange = {handelEmail}
+                    className = 'input-box'
+                    />
+                <textarea name = 'message' 
+                    value = {message} 
+                    required 
+                    placeholder = 'Message' 
+                    onChange = {handelMessage}
+                    className = 'input-box'
+                    rows = '5'
+                    cols = '40'
+                    />
+                <button type = 'submit' className = 'btn'>Submit</button>
+            </StyledContactForm>
+        </>
   )
 }
 
@@ -82,10 +105,11 @@ const StyledContactForm = styled.form`
         ${'' /* border: 1px solid ${props => props.theme.colors.primary}; */}
     input{
         margin-bottom: 5%;
+        color: white;
     }
     .input-box{
         border:0;
-        border-bottom:1px solid ${pr => pr.theme.colors.primary};  
+        border-bottom:2px solid ${pr => pr.theme.colors.primary};  
         background:transparent;
         width:100%;
         padding:8px 0 5px 0;

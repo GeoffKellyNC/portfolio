@@ -15,6 +15,7 @@ import { navData } from '../data/headerData';
 
 //!-- Importing Mobile Menu icon --//
 import { BiMenuAltLeft } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai';
 
 
 
@@ -31,27 +32,28 @@ const Header = ({ handleProjectClick, handleContactClick }) => {
     const handleClick = (e) => {
         console.log(e.target.textContent)
         if (e.target.textContent === 'PROJECTS' || e.target.textContent === '01') {
+            setIsOpen(false);
            return handleProjectClick();
         }
         if (e.target.textContent === 'CONTACT' || e.target.textContent === '02') {
+            setIsOpen(false);
             return handleContactClick();
         }
+        
 
     }
 
 
     return (
         <HeaderStyled>
-            <BiMenuAltLeft 
-                size = {"5em"}
-                color = {'white'}
-                className = 'ham-icon'
-                onClick = {() => setIsOpen(!isOpen)} />
+            {
+                !isOpen ? <BiMenuAltLeft size = {"5em"} color = {'#F0A202'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} /> : <AiOutlineClose size = {"3em"} color = {'#EE6352'} className = 'ham-icon' onClick = {() => setIsOpen(!isOpen)} />
+            }
             <nav className = 'nav'>
                 {
                     navData.map(item => {
                         return(
-                            <NavLink 
+                            <NavLink
                                 key={item.id} 
                                 to={item.to} 
                                 className={item.className}
@@ -144,7 +146,7 @@ const HeaderStyled = styled.div`
 
     @media (max-width: 670px) {
         .ham-icon {
-            display: block;
+            display: flex;
         }
 
         .nav {
@@ -154,13 +156,13 @@ const HeaderStyled = styled.div`
         .mobile-nav {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            ${'' /* justify-content: center; */}
             margin-top: 20%;
             background-color: ${pr => pr.theme.colors.secondary};
-            width: 50%;
-            height: 60%;
-            padding: 0.5rem;
-            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            ${'' /* border-radius: 10px; */}
             box-shadow: 0 10px 20px -10px black;
             position: fixed;
             top: 0;

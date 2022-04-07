@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { NavLink } from 'react-router-dom'
 
@@ -11,16 +11,6 @@ import { navData } from '../data/headerData';
 const MobileNav = ({  handleClick, setIsOpen }) => {
 
 
-    useEffect(() => {
-        document.querySelector('.navLink').addEventListener('click', () => {
-              setIsOpen(false)
-          })
-          return () => {
-                document.querySelector('.navLink').removeEventListener('click', () => {
-                    setIsOpen(false)
-                })
-            }
-      }, [setIsOpen])
 
 
     return (
