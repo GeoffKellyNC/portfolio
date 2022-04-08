@@ -1,21 +1,32 @@
 import React from 'react';
 
+import { useParams } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 import { FaGithubSquare } from 'react-icons/fa';
 
 const Project = ({ projectData }) => {
+
+    const { projectID } = useParams();
+
+
+
+    const project = projectData.find(project => project.id === parseInt(projectID));
+    if (!projectData.length) return "Loading...";
+
+
     return(
         <StyledProject className = 'project-card-container'>
             <img
-                src = {projectData.imageSrc}
+                src = {project.imageSrc}
                 alt = 'Project Screenshot'
                 className = 'project-card-img' />
             <div className = 'project-card-text'>
-                <h2>PROJECT NAME:</h2><span>{projectData.title}</span>
-                <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{projectData.description}</p>
-                <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{projectData.technologies.join(', ')}</p>
-                <a href = {projectData.githubLink}>
+                {/* <h2>PROJECT NAME:</h2><span>{project.title}</span> */}
+                <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
+                <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{project.technologies.join(', ')}</p>
+                <a href = {project.githubLink}>
                     <FaGithubSquare className = 'github-icon'  />
                 </a>
             </div>
@@ -30,7 +41,7 @@ export default Project;
 
 
 const StyledProject = styled.div`
-        border: 1px solid ${pr => pr.theme.colors.primary};
+        border-bottom: 3px solid ${pr => pr.theme.colors.primary};
         width: 70%;
         margin: auto;
         border-radius: 5px;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Route, NavLink, useRouteMatch } from 'react-router-dom';
 
 //! -- Importing Project Images -- //
 
@@ -14,6 +15,8 @@ import Project from './Project';
 const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
 
+    const { path, url } = useRouteMatch();
+
     return(
         <StyledProjects className = 'project-container'>
             <div ref = {projectsRef} className = 'project-title'>
@@ -21,13 +24,22 @@ const Projects = ({projectsRef}) => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-            {
-                projectInfo.map(project => {
-                    return(
-                        <Project projectData = {project} key = {project.id} />
-                    )
-                })
-            }
+                <div className = 'project-nav-container'>
+                    {
+                        projectInfo.map(project => {
+                            return(
+                                <NavLink 
+                                    to = {`${url}${project.id}`} 
+                                    className = 'project-link '
+                                    key = {project.id}
+                                    > {project.title}</NavLink>
+                            )
+                        })
+                    }
+                </div>
+            <Route path = {`${path}:projectID`} >
+                <Project projectData = {projectInfo} />
+            </Route>
         </StyledProjects>
     )
 }
@@ -66,6 +78,33 @@ const StyledProjects = styled.div`
         margin-left: 7.5em;
         background-color: ${pr => pr.theme.colors.primary};
     }
+
+    .project-nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 2em;
+        gap: 1em;
+    }
+    
+
+    .project-link {
+        text-decoration: none;
+        color: ${pr => pr.theme.colors.secondary};
+        font-size: ${pr => pr.theme.fontSizes.small};
+        font-weight: ${pr => pr.theme.fontWeights.bold};
+        margin: 1em 0;
+        padding: 0.5em;
+        border: 1px solid ${pr => pr.theme.colors.primary};
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+        &:hover {
+            color: ${pr => pr.theme.colors.primary};
+        }
+    }
+    
 
 
 
