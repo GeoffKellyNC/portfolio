@@ -115,6 +115,11 @@ const StyledProjects = styled.div`
             width: 100px;
         }
 
+        .project-nav-container {
+            flex-direction: column;
+            gap: 1em;
+        }
+
     }
 
     
