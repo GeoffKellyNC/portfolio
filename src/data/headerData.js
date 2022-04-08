@@ -1,28 +1,28 @@
-
+import { v4 as uuid } from 'uuid';
 
 export const navData = [
     {   
-        id: 1,
+        id: uuid(),
         name: 'PROJECTS',
         to: '/',
         className: 'nav-link nav-projects',
         num: '01'
     },
     {   
-        id: 2,
+        id: uuid(),
         name: 'CONTACT',
         to: '/',
         className: 'nav-link nav-contact',
         num: '02'
     },
-    {   id: 3,
+    {   id: uuid(),
         name: 'RESUME',
         to: '/',
         className: 'nav-link nav-about',
         num: '03'
     },
     {   
-        id: 4,
+        id: uuid(),
         name: 'ABOUT',
         to: '/',
         className: 'nav-link nav-about',
