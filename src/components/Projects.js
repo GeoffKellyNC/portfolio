@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Route, NavLink, useRouteMatch } from 'react-router-dom';
 
 //! -- Importing Project Images -- //
 
@@ -14,6 +15,8 @@ import Project from './Project';
 const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
 
+    const { path, url } = useRouteMatch();
+
     return(
         <StyledProjects className = 'project-container'>
             <div ref = {projectsRef} className = 'project-title'>
@@ -21,13 +24,18 @@ const Projects = ({projectsRef}) => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-            {
-                projectInfo.map(project => {
-                    return(
-                        <Project projectData = {project} key = {project.id} />
-                    )
-                })
-            }
+            <div>
+                <div>
+                    <NavLink to = {`${url}1`} className = 'project-link'> Project 1
+                    </NavLink>
+                    <NavLink to = {`${url}2`} className = 'project-link'> Project 2
+                    </NavLink>
+                </div>
+            </div>
+
+            <Route path = {`${path}:projectID`} >
+                <Project projectData = {projectInfo} />
+            </Route>
         </StyledProjects>
     )
 }
