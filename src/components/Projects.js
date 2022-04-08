@@ -26,10 +26,17 @@ const Projects = ({projectsRef}) => {
             </div>
             <div>
                 <div>
-                    <NavLink to = {`${url}1`} className = 'project-link'> Project 1
-                    </NavLink>
-                    <NavLink to = {`${url}2`} className = 'project-link'> Project 2
-                    </NavLink>
+                    {
+                        projectInfo.map(project => {
+                            return(
+                                <NavLink 
+                                    to = {`${url}${project.id}`} 
+                                    className = 'project-link '
+                                    key = {project.id}
+                                    > {project.title}</NavLink>
+                            )
+                        })
+                    }
                 </div>
             </div>
 
@@ -74,6 +81,24 @@ const StyledProjects = styled.div`
         margin-left: 7.5em;
         background-color: ${pr => pr.theme.colors.primary};
     }
+
+    .project-link {
+        text-decoration: none;
+        color: ${pr => pr.theme.colors.secondary};
+        font-size: ${pr => pr.theme.fontSizes.medium};
+        font-weight: ${pr => pr.theme.fontWeights.bold};
+        margin: 1em 0;
+        padding: 0.5em;
+        border: 1px solid ${pr => pr.theme.colors.primary};
+        border-radius: 5px;
+        transition: all .2s ease-in-out;
+        &:hover {
+            color: ${pr => pr.theme.colors.primary};
+            transform: scale(1.2);
+            transition: all .2s ease-in-out;
+        }
+    }
+    
 
 
 
