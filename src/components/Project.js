@@ -12,7 +12,7 @@ const Project = ({ projectData }) => {
 
 
 
-    const project = projectData.find(project => project.id === parseInt(projectID));
+    const project = projectData.find(project => project.id === projectID);
     if (!projectData.length) return "Loading...";
 
 
