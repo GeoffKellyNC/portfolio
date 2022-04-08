@@ -23,7 +23,7 @@ const Project = ({ projectData }) => {
                 alt = 'Project Screenshot'
                 className = 'project-card-img' />
             <div className = 'project-card-text'>
-                <h2>PROJECT NAME:</h2><span>{project.title}</span>
+                {/* <h2>PROJECT NAME:</h2><span>{project.title}</span> */}
                 <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
                 <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{project.technologies.join(', ')}</p>
                 <a href = {project.githubLink}>

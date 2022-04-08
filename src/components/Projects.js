@@ -24,8 +24,7 @@ const Projects = ({projectsRef}) => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-            <div>
-                <div>
+                <div className = 'project-nav-container'>
                     {
                         projectInfo.map(project => {
                             return(
@@ -38,8 +37,6 @@ const Projects = ({projectsRef}) => {
                         })
                     }
                 </div>
-            </div>
-
             <Route path = {`${path}:projectID`} >
                 <Project projectData = {projectInfo} />
             </Route>
@@ -82,10 +79,21 @@ const StyledProjects = styled.div`
         background-color: ${pr => pr.theme.colors.primary};
     }
 
+    .project-nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 2em;
+        gap: 1em;
+    }
+    
+
     .project-link {
         text-decoration: none;
         color: ${pr => pr.theme.colors.secondary};
-        font-size: ${pr => pr.theme.fontSizes.medium};
+        font-size: ${pr => pr.theme.fontSizes.small};
         font-weight: ${pr => pr.theme.fontWeights.bold};
         margin: 1em 0;
         padding: 0.5em;
@@ -94,8 +102,6 @@ const StyledProjects = styled.div`
         transition: all .2s ease-in-out;
         &:hover {
             color: ${pr => pr.theme.colors.primary};
-            transform: scale(1.2);
-            transition: all .2s ease-in-out;
         }
     }
     
