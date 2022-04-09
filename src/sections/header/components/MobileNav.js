@@ -20,6 +20,14 @@ const MobileNav = ({  handleClick, setIsOpen }) => {
 
     return (
     <MobileNavStyled className = 'mobile-nav'>
+        <div className = 'icons-container'>
+            {iconsData.map(icon => (
+                <li key = {icon.id}>
+                    <a href = {icon.link} className = {`${icon.name}-icon icon`} target = "_blank" rel="noreferrer" >{icon.icon}
+                    </a>
+                </li>
+            ))}
+        </div>
         <div className = 'top-line'></div>
         <div className = 'link-container'>
             {
@@ -58,7 +66,7 @@ const MobileNavStyled = styled.nav`
             z-index: 100;
             transition: all 0.3s ease-in-out;
        
-        a {
+        .link-container a {
             text-decoration: none;
             color: ${pr => pr.theme.colors.black};
             font-family: ${pr => pr.theme.fonts.secondary};
@@ -73,6 +81,17 @@ const MobileNavStyled = styled.nav`
             margin: 0;
         }
 
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 12%;
+            padding: 0.5rem 0;
+            margin: 0;
+        }
+
         .link-container{
             display: flex;
             flex-direction: column;
@@ -80,7 +99,7 @@ const MobileNavStyled = styled.nav`
             justify-content: center;
             width: 100%;
             height: 100%;
-            padding: 0.5rem;
+            ${'' /* padding: 0.5rem; */}
             margin: 0;
         }
 
@@ -101,6 +120,24 @@ const MobileNavStyled = styled.nav`
             bottom: 15em;
             left: 0;
         }
+
+        .icons-container{
+            display: flex;
+            position: absolute;
+            top: 14%;
+            left: 0;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .icons-container a{
+            text-decoration: none;
+            color: ${pr => pr.theme.colors.primary};
+            font-family: ${pr => pr.theme.fonts.secondary};
+            font-size: ${pr => pr.theme.fontSizes.medium};
+            font-weight: ${pr => pr.theme.fontWeights.normal};
+        }
+
 
 
 
