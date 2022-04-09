@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { NavLink } from 'react-router-dom'
 
@@ -14,7 +15,7 @@ const MobileNav = ({  handleClick, setIsOpen }) => {
 
 
     return (
-        <nav className = 'mobile-nav'>
+        <MobileNavStyled className = 'mobile-nav'>
         {
             navData.map(item => {
                 return(
@@ -29,9 +30,45 @@ const MobileNav = ({  handleClick, setIsOpen }) => {
                 )
             })
         }
-    </nav>
+    </MobileNavStyled>
     )
 }
 
 
 export default MobileNav;
+
+
+const MobileNavStyled = styled.nav`
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20%;
+            background-color: ${pr => pr.theme.colors.secondary};
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 10px 20px -10px black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            transition: all 0.3s ease-in-out;
+       
+        a {
+            text-decoration: none;
+            color: ${pr => pr.theme.colors.black};
+            font-family: ${pr => pr.theme.fonts.secondary};
+            font-size: ${pr => pr.theme.fontSizes.medium};
+            font-weight: ${pr => pr.theme.fontWeights.normal};
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+            width: 100%;
+            height: 10%;
+            padding: 0.5rem 1rem;
+            margin: 0;
+        }        
+
+
+
+`

@@ -18,8 +18,8 @@ const Projects = ({projectsRef}) => {
     const { path, url } = useRouteMatch();
 
     return(
-        <StyledProjects className = 'project-container'>
-            <div ref = {projectsRef} className = 'project-title'>
+        <StyledProjects className = 'project-container' ref = {projectsRef} >
+            <div  className = 'project-title'>
                 <h1>
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
