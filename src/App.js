@@ -7,10 +7,10 @@ import styled from 'styled-components';
 
 
 //!--Components --//
-import Header from './components/Header'
+import Header from './sections/header/Header';
 import SocialIcons from './components/SocialIcons'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Projects from './sections/projects/Projects';
+import Contact from './sections/contact/Contact';
 
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';

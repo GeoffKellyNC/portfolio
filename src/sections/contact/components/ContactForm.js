@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { send } from 'emailjs-com'
 import styled from 'styled-components'
 
-import {EMAIL_JS_KEY, TEMPLATE_ID, SERVICE_ID} from '../constants'
+import {EMAIL_JS_KEY, TEMPLATE_ID, SERVICE_ID} from '../../../constants'
 
 function ContactForm() {
     const [senderName, setSenderName] = useState('')

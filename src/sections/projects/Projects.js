@@ -5,9 +5,9 @@ import { Route, NavLink, useRouteMatch } from 'react-router-dom';
 //! -- Importing Project Images -- //
 
 //! -- Import Project Data -- //
-import { projectData } from '../data/projectsData';
+import { projectData } from '../../data/projectsData';
 
-import Project from './Project';
+import Project from './components/Project';
 
 
 

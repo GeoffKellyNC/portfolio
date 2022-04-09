@@ -5,13 +5,13 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 
 //!-- Importing MobileNav component --//
-import MobileNav from './MobileNav'
+import MobileNav from './components/MobileNav'
 
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
 
 //!--Navigation Data Import --//
-import { navData } from '../data/headerData';
+import { navData } from '../../data/headerData';
 
 //!-- Importing Mobile Menu icon --//
 import { BiMenuAltLeft } from 'react-icons/bi';
