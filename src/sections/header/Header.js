@@ -113,6 +113,15 @@ const HeaderStyled = styled.div`
         transition: all 0.3s ease-in-out;
     }
 
+    .num {
+            margin-right: 1rem;
+            color: ${pr => pr.theme.colors.primary};
+        }
+
+    .name{
+        font-weight: ${pr => pr.theme.fontWeights.normal};
+    }
+
     .nav a {
         text-decoration: none;
         text-transform: uppercase;
@@ -135,10 +144,7 @@ const HeaderStyled = styled.div`
         transition: all 0.3s ease-in-out;
     }
 
-    .num {
-        margin-right: 1rem;
-        color: ${pr => pr.theme.colors.primary};
-    }
+
 
     .ham-icon {
         display: none;

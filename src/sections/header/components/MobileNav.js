@@ -38,8 +38,8 @@ const MobileNav = ({  handleClick, setIsOpen }) => {
                             to={item.to} 
                             className={`${item.className} navLink`}
                             onClick = {(e) => handleClick(e)}>
-                            <span className = 'num'>{item.num}</span>
-                            <span className = 'name'>{item.name}</span>
+                            <span className = 'nav-num'>{item.num}</span>
+                            <span className = 'nav-name'>{item.name}</span>
                         </NavLink>
                     )
                 })
@@ -68,10 +68,10 @@ const MobileNavStyled = styled.nav`
        
         .link-container a {
             text-decoration: none;
-            color: ${pr => pr.theme.colors.black};
-            font-family: ${pr => pr.theme.fonts.secondary};
+            color: ${pr => pr.theme.colors.primary};
+            font-family: ${pr => pr.theme.fonts.primary};
             font-size: ${pr => pr.theme.fontSizes.medium};
-            font-weight: ${pr => pr.theme.fontWeights.normal};
+            font-weight: 900;
             display: flex;
             justify-content: center;
             text-transform: uppercase;
@@ -91,6 +91,14 @@ const MobileNavStyled = styled.nav`
             padding: 0.5rem 0;
             margin: 0;
         }
+        .nav-num {
+            margin-right: 1rem;
+            color: ${pr => pr.theme.colors.black};
+        }
+
+    .nav-name{
+        font-weight: ${pr => pr.theme.fontWeights.normal};
+    }
 
         .link-container{
             display: flex;
