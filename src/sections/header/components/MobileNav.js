@@ -115,8 +115,8 @@ const MobileNavStyled = styled.nav`
             width: 100%;
             height: 1em;
             background-color: ${pr => pr.theme.colors.black};
-            position: absolute;
-            top: 11em;
+            position: relative;
+            top: 20%;
             left: 0;
         }
 
@@ -125,7 +125,7 @@ const MobileNavStyled = styled.nav`
             height: 1em;
             background-color: ${pr => pr.theme.colors.black};
             position: absolute;
-            bottom: 15em;
+            bottom: 25%;
             left: 0;
         }
 
