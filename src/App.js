@@ -16,7 +16,7 @@ import Contact from './sections/contact/Contact';
 import { socialIcons } from './data/socialIconsData';
 
 //!-- Importing Resume PDF --//
-import resume from './data/geoffrey-kelly-resume.pdf'
+import resume from './data/geoff-kelly-2022.pdf';
 
 //!-- Importing Site Loader --//
 import RingLoader from "react-spinners/RingLoader";
