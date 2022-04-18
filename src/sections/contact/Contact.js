@@ -8,7 +8,7 @@ function Contact({ contactRef }) {
     <ContactStyled>
       <div ref = {contactRef} className = 'contact-title'>
                 <h1>
-                    <span className = 'num-title'>02.</span>
+                    <span className = 'num-title'>03.</span>
                 CONTACT</h1>
             </div>
         <ContactForm />

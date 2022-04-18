@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect  } from 'react'
-import './App.css';
+import './App.scss';
 
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import Header from './sections/header/Header';
 import SocialIcons from './components/SocialIcons'
 import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
+import About from './sections/about/About';
 
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';
@@ -31,6 +32,7 @@ function App() {
   //!--Refs--//
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const aboutRef = useRef(null);
 
 
 //!-- Click Handlers --//
@@ -43,6 +45,13 @@ function App() {
 
   const handleContactClick = () => {
     contactRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
+  const handleAboutClick = () => {
+    aboutRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     })
@@ -75,7 +84,7 @@ function App() {
         :
         <>
           <div className='header-container'>
-              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} />
+              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} handleAboutClick = {handleAboutClick} />
             </div><SocialIcons icons={icons} />
               <section className='content-container'>
                 <div className='top-text-container'>
@@ -98,12 +107,15 @@ function App() {
                   </a>
                 </div>
               </section>
-                <section className='projects-container'>
-                  <Projects projectsRef={projectsRef} />
-                </section>  
-                <section className='contact-container'>
-                  <Contact contactRef={contactRef} />
-                </section>
+              <section className='projects-container'>
+                <Projects projectsRef={projectsRef} />
+              </section>
+              <section className='about-container'>
+                <About aboutRef={aboutRef} />
+              </section>
+              <section className='contact-container'>
+                <Contact contactRef={contactRef} />
+              </section>
             </>
  
       }
