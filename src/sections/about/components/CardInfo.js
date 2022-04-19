@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CardInfo({cardID, cardInfo}) {
+function CardInfo({cardID, cardInfo, setIsOpen}) {
     
 
 
@@ -12,7 +12,10 @@ function CardInfo({cardID, cardInfo}) {
     console.log(selectedCard)
 
     return (
-    <div>{selectedCard.moreInfo.text}</div>
+    <div>
+        <div> {selectedCard.moreInfo.text} </div>
+        <button onClick = {() =>setIsOpen(false)}>Close</button>
+    </div>
   )
 }
 

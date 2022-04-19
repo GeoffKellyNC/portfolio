@@ -10,7 +10,7 @@ export const cardData = [
         moreInfo: 
             {
                 id: uuid(),
-                text: 'About Text'
+                text: 'I am a full stack web developer with a passion for creating beautiful and functional websites.I am a full stack web developer.'
             }
     },
     {

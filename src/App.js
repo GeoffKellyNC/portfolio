@@ -2,6 +2,8 @@
 import React, { useState, useRef, useEffect  } from 'react'
 import './App.scss';
 
+import { AiOutlineArrowDown } from 'react-icons/ai';
+
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
 
@@ -63,7 +65,7 @@ function App() {
 
     setTimeout(() => {
         setLoading(!loading)
-    }, 3000);
+    }, 100);
 
   },[])
 
@@ -105,6 +107,14 @@ function App() {
                       <span className='resume-text'>RESUME</span>
                     </div>
                   </a>
+                </div>
+                <div className = 'scroll-down'>
+                  <span className = 'scroll-text'>scroll down</span>
+                  <AiOutlineArrowDown className = 'scroll-arrow'/>
+                </div>
+                <div className = 'scroll-down scroll-down--left'>
+                  <span className = 'scroll-text'>scroll down</span>
+                  <AiOutlineArrowDown className = 'scroll-arrow'/>
                 </div>
               </section>
               <section className='projects-container'>
@@ -212,6 +222,50 @@ const StyledApp = styled.div`
     align-items: center;
     height: 100vh;
   }
+
+  .scroll-down {
+    position: absolute;
+    right: 2.5em;
+    bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: ${pr => pr.theme.fontSizes.small};
+    color: ${pr => pr.theme.colors.secondary};
+}
+
+.scroll-down--left {
+    left: 4em;
+    right: auto;
+}
+
+.scroll-down span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
 
   @media (max-width: 768px) {
 

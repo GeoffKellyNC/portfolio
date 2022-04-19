@@ -11,15 +11,16 @@ import { cardData } from '../../data/aboutData'
 import './scss/about.scss'
 
 function About( { aboutRef } ) {
-    const [data, setData] = useState(cardData)
+    const [data] = useState(cardData)
     const [cardID, setCardID] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
 
 
     const handleCardClick = (id) => {
         setCardID(id)
-        setIsOpen(!isOpen)
+        setIsOpen(true)
     }
+
   return (
     <StyledAbout>
         <div ref = {aboutRef} className = 'about-title'>
@@ -32,12 +33,14 @@ function About( { aboutRef } ) {
         {
             data.map(card => {
                 return(
-                    <Cards info = {card} id = {card.id} handleCardClick = {handleCardClick} />
+                    <Cards key = {card.id} info = {card} handleCardClick = {handleCardClick} />
                 )
             })
         }
+        </div>
+        <div>
         {
-            isOpen && <CardInfo cardID = {cardID} cardInfo = {data} />
+            isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen}/>
         }
         </div>
     </StyledAbout>
@@ -88,7 +91,7 @@ const StyledAbout = styled.div`
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: 5em;
+        margin-top: 2em;
     }
 
 

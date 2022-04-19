@@ -22,8 +22,6 @@ function Cards({ info, handleCardClick }) {
           </div>
       </div>
     </div>
-  
-    
   )
 }
 
