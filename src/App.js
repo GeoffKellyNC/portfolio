@@ -65,9 +65,10 @@ function App() {
 
     setTimeout(() => {
         setLoading(!loading)
-    }, 100);
+    }, 3000);
 
   },[])
+
 
 
 
@@ -250,6 +251,8 @@ const StyledApp = styled.div`
     animation-duration: 1s;
     animation-iteration-count: infinite;
 }
+
+
 
 @keyframes bounce-1 {
   0% {

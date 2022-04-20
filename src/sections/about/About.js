@@ -38,11 +38,9 @@ function About( { aboutRef } ) {
             })
         }
         </div>
-        <div>
-        {
-            isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen}/>
-        }
-        </div>
+            {
+                isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen}/>
+            }
     </StyledAbout>
   )
 }
@@ -93,6 +91,10 @@ const StyledAbout = styled.div`
         flex-wrap: wrap;
         margin-top: 2em;
     }
+
+
+
+
 
 
     @media (max-width: 768px) {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Route, NavLink, useRouteMatch } from 'react-router-dom';
 
 //! -- Importing Project Images -- //
 
@@ -14,8 +13,15 @@ import Project from './components/Project';
 
 const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
+    const [projectID, setProjectID] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const { path, url } = useRouteMatch();
+
+    const handleProjectClick = (id) => {
+        setProjectID(id);
+        setIsOpen(true);
+    }
+
 
     return(
         <StyledProjects className = 'project-container' ref = {projectsRef} >
@@ -28,18 +34,18 @@ const Projects = ({projectsRef}) => {
                     {
                         projectInfo.map(project => {
                             return(
-                                <NavLink 
-                                    to = {`${url}${project.id}`} 
-                                    className = 'project-link '
+                                <button 
+                                    className = 'project-button '
                                     key = {project.id}
-                                    > {project.title}</NavLink>
+                                    onClick = {() => {handleProjectClick(project.id)} }
+                                    > {project.title}</button>
                             )
                         })
                     }
                 </div>
-            <Route path = {`${path}:projectID`} >
-                <Project projectData = {projectInfo} />
-            </Route>
+                {
+                    isOpen && <Project projectID = {projectID} projectData = {projectInfo} setIsOpen = {setIsOpen}/>
+                }
         </StyledProjects>
     )
 }
@@ -110,19 +116,21 @@ const StyledProjects = styled.div`
     }
     
 
-    .project-link {
-        text-decoration: none;
-        color: ${pr => pr.theme.colors.secondary};
-        font-size: ${pr => pr.theme.fontSizes.small};
-        font-weight: ${pr => pr.theme.fontWeights.bold};
-        margin: 1em 0;
-        padding: 0.5em;
-        border: 1px solid ${pr => pr.theme.colors.primary};
-        border-radius: 5px;
-        transition: all .2s ease-in-out;
+    .project-button {
+        background: ${pr => pr.theme.colors.secondary};
+        color: ${pr => pr.theme.colors.primary};
+        border: none;
+        border-radius: calc(2 * var(--border-width));
+        padding: 1em;
+        font-size: 1.5em;
+        font-weight: bold;
+        width: 15em;
+        margin: 0.5em;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
         &:hover {
-            color: ${pr => pr.theme.colors.primary};
-        }
+            background: ${pr => pr.theme.colors.primary};
+            color: ${pr => pr.theme.colors.secondary};
     }
     
 
