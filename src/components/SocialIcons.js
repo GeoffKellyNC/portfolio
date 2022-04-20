@@ -47,6 +47,12 @@ const StyledIcons = styled.div`
         margin: 0.5em 0;
     }
 
+    svg:hover{
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        transform: scale(3);
+    }
+
     .Email-icon::after {
         content: "";
         display: block;
@@ -89,6 +95,8 @@ const StyledIcons = styled.div`
 
     .icon:hover{
         color: ${pr => pr.theme.colors.secondary};
+
+
     }
 
     @media (max-width: 956px) {

@@ -80,7 +80,7 @@ const StyledProjects = styled.div`
         position: relative;
         top: -15px;
         width: 200px;
-        height: 1px;
+        height: 3px;
         margin-left: 7.5em;
         background: linear-gradient(
         60deg,
@@ -117,21 +117,22 @@ const StyledProjects = styled.div`
     
 
     .project-button {
-        background: ${pr => pr.theme.colors.secondary};
+        background: transparent;
+        border: 2px solid ${pr => pr.theme.colors.secondary};
+        border-radius: 5px;
         color: ${pr => pr.theme.colors.primary};
-        border: none;
-        border-radius: calc(2 * var(--border-width));
-        padding: 1em;
-        font-size: 1.5em;
-        font-weight: bold;
-        width: 15em;
+        font-family: ${pr => pr.theme.fonts.secondary};
+        font-size: 1.2em;
+        padding: 0.5em 1em;
         margin: 0.5em;
-        cursor: pointer;
         transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
         &:hover {
-            background: ${pr => pr.theme.colors.primary};
-            color: ${pr => pr.theme.colors.secondary};
+            background: ${pr => pr.theme.colors.secondary};
+            color: ${pr => pr.theme.colors.primary};
     }
+
     
 
 

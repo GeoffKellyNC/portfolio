@@ -72,9 +72,23 @@ const StyledAbout = styled.div`
         position: relative;
         top: -15px;
         width: 200px;
-        height: 1px;
+        height: 3px;
         margin-left: 6.5em;
-        background-color: ${pr => pr.theme.colors.primary};
+        background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+        );
+        background-size: 300% 300%;
+        background-position: 0 50%;
+        border-radius: calc(2 * var(--border-width));
+        animation: moveGradient 4s alternate infinite;
     }
 
     .blob{
