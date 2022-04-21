@@ -37,10 +37,11 @@ function About( { aboutRef } ) {
                 )
             })
         }
+        {
+            isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen} isOpen = {isOpen} />
+        }
         </div>
-            {
-                isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen}/>
-            }
+
     </StyledAbout>
   )
 }

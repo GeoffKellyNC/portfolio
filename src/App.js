@@ -284,6 +284,10 @@ const StyledApp = styled.div`
       margin-left: 0;
   }
 
+  .scroll-down {
+    display: none;
+  }
+
 
   //! -- AboutMe Section -- //
 

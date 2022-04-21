@@ -30,7 +30,7 @@ const Projects = ({projectsRef}) => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-                <div className = 'project-nav-container'>
+                <div className = 'project-button-container'>
                     {
                         projectInfo.map(project => {
                             return(
@@ -105,7 +105,7 @@ const StyledProjects = styled.div`
         }
     }
 
-    .project-nav-container {
+    .project-button-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -132,30 +132,25 @@ const StyledProjects = styled.div`
             background: ${pr => pr.theme.colors.secondary};
             color: ${pr => pr.theme.colors.primary};
     }
-
-    
-
-
-
+    }
+  
     @media (max-width: 768px) {
-        margin-top: 10em;
+        font-size: 1em;
+        padding: 0.5em 1em;
+        margin: 0.5em;
 
-        h1::after{
-            width: 100px;
-        }
-
-        .project-nav-container {
+        .project-button-container {
             flex-direction: column;
+            align-items: center;
             gap: 1em;
         }
-
     }
 
+`;
     
 
 
 
-`
 
 
 
