@@ -1,14 +1,12 @@
 import React from 'react';
 
-import { useParams } from 'react-router-dom';
 
 import styled from 'styled-components';
 
 import { FaGithubSquare } from 'react-icons/fa';
 
-const Project = ({ projectData }) => {
+const Project = ({ projectData, projectID, setIsOpen }) => {
 
-    const { projectID } = useParams();
 
 
 

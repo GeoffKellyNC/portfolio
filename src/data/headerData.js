@@ -8,23 +8,23 @@ export const navData = [
         className: 'nav-link nav-projects',
         num: '01'
     },
+    {   id: uuid(),
+        name: 'ABOUT',
+        to: '/',
+        className: 'nav-link nav-about',
+        num: '02'
+    },
     {   
         id: uuid(),
         name: 'CONTACT',
         to: '/',
         className: 'nav-link nav-contact',
-        num: '02'
-    },
-    {   id: uuid(),
-        name: 'RESUME',
-        to: '/',
-        className: 'nav-link nav-about',
         num: '03'
     },
     {   
         id: uuid(),
-        name: 'ABOUT',
-        to: '/',
+        name: 'RESUME',
+        to: './geoff-kelly-2022.pdf',
         className: 'nav-link nav-about',
         num: '04'
     }

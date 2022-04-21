@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Route, NavLink, useRouteMatch } from 'react-router-dom';
 
 //! -- Importing Project Images -- //
 
@@ -14,8 +13,15 @@ import Project from './components/Project';
 
 const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
+    const [projectID, setProjectID] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
-    const { path, url } = useRouteMatch();
+
+    const handleProjectClick = (id) => {
+        setProjectID(id);
+        setIsOpen(true);
+    }
+
 
     return(
         <StyledProjects className = 'project-container' ref = {projectsRef} >
@@ -24,22 +30,22 @@ const Projects = ({projectsRef}) => {
                     <span className = 'num-title'>01.</span>
                 Projects</h1>
             </div>
-                <div className = 'project-nav-container'>
+                <div className = 'project-button-container'>
                     {
                         projectInfo.map(project => {
                             return(
-                                <NavLink 
-                                    to = {`${url}${project.id}`} 
-                                    className = 'project-link '
+                                <button 
+                                    className = 'project-button '
                                     key = {project.id}
-                                    > {project.title}</NavLink>
+                                    onClick = {() => {handleProjectClick(project.id)} }
+                                    > {project.title}</button>
                             )
                         })
                     }
                 </div>
-            <Route path = {`${path}:projectID`} >
-                <Project projectData = {projectInfo} />
-            </Route>
+                {
+                    isOpen && <Project projectID = {projectID} projectData = {projectInfo} setIsOpen = {setIsOpen}/>
+                }
         </StyledProjects>
     )
 }
@@ -55,7 +61,7 @@ const StyledProjects = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 16em;
+    margin-top: 20em;
     color: ${pr => pr.theme.colors.primary};
     font-family: ${pr => pr.theme.fonts.secondary};
 
@@ -74,12 +80,32 @@ const StyledProjects = styled.div`
         position: relative;
         top: -15px;
         width: 200px;
-        height: 1px;
+        height: 3px;
         margin-left: 7.5em;
-        background-color: ${pr => pr.theme.colors.primary};
+        background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+        );
+        background-size: 300% 300%;
+        background-position: 0 50%;
+        border-radius: calc(2 * var(--border-width));
+        animation: moveGradient 4s alternate infinite;
     }
 
-    .project-nav-container {
+    @keyframes moveGradient {
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .project-button-container {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -90,43 +116,41 @@ const StyledProjects = styled.div`
     }
     
 
-    .project-link {
-        text-decoration: none;
-        color: ${pr => pr.theme.colors.secondary};
-        font-size: ${pr => pr.theme.fontSizes.small};
-        font-weight: ${pr => pr.theme.fontWeights.bold};
-        margin: 1em 0;
-        padding: 0.5em;
-        border: 1px solid ${pr => pr.theme.colors.primary};
+    .project-button {
+        background: transparent;
+        border: 2px solid ${pr => pr.theme.colors.secondary};
         border-radius: 5px;
-        transition: all .2s ease-in-out;
+        color: ${pr => pr.theme.colors.primary};
+        font-family: ${pr => pr.theme.fonts.secondary};
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        margin: 0.5em;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
         &:hover {
+            background: ${pr => pr.theme.colors.secondary};
             color: ${pr => pr.theme.colors.primary};
-        }
     }
-    
-
-
-
+    }
+  
     @media (max-width: 768px) {
-        margin-top: 10em;
+        font-size: 1em;
+        padding: 0.5em 1em;
+        margin: 0.5em;
 
-        h1::after{
-            width: 100px;
-        }
-
-        .project-nav-container {
+        .project-button-container {
             flex-direction: column;
+            align-items: center;
             gap: 1em;
         }
-
     }
 
+`;
     
 
 
 
-`
 
 
 

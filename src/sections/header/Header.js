@@ -23,7 +23,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 
 
-const Header = ({ handleProjectClick, handleContactClick }) => {
+const Header = ({ handleProjectClick, handleContactClick, handleAboutClick }) => {
     //! State for Mobile Menu
     const [isOpen, setIsOpen] = useState(false);
 
@@ -35,9 +35,14 @@ const Header = ({ handleProjectClick, handleContactClick }) => {
             setIsOpen(false);
            return handleProjectClick();
         }
-        if (e.target.textContent === 'CONTACT' || e.target.textContent === '02') {
+        if (e.target.textContent === 'CONTACT' || e.target.textContent === '03') {
             setIsOpen(false);
             return handleContactClick();
+        }
+
+        if (e.target.textContent === 'ABOUT' || e.target.textContent === '02'){
+            setIsOpen(false)
+            return handleAboutClick();
         }
         
 
@@ -77,7 +82,7 @@ export default Header;
 
 //!--Styled Components --//
 
-const HeaderStyled = styled.div`  
+const HeaderStyled = styled.header`  
     ${'' /* display: flex; */}
     background-color: ${pr => pr.theme.colors.black};  
     box-shadow: 0 10px 20px -10px black;
@@ -88,7 +93,7 @@ const HeaderStyled = styled.div`
     align-items: center;
     padding: 0.7rem 2rem;
     overflow: hidden;
-    z-index: 1;
+    z-index: 100;
     width: 100%; 
     margin: auto;
     top: 0;

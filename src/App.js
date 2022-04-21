@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect  } from 'react'
-import './App.css';
+import './App.scss';
+
+import { AiOutlineArrowDown } from 'react-icons/ai';
 
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
@@ -11,6 +13,7 @@ import Header from './sections/header/Header';
 import SocialIcons from './components/SocialIcons'
 import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
+import About from './sections/about/About';
 
 //! -- Icons Data -- //
 import { socialIcons } from './data/socialIconsData';
@@ -31,6 +34,7 @@ function App() {
   //!--Refs--//
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const aboutRef = useRef(null);
 
 
 //!-- Click Handlers --//
@@ -48,15 +52,23 @@ function App() {
     })
   }
 
+  const handleAboutClick = () => {
+    aboutRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
   //!-- Site Pre Loader --//
 
   useEffect(() => {
 
     setTimeout(() => {
         setLoading(!loading)
-    }, 3000);
+    }, 2000);
 
   },[])
+
 
 
 
@@ -75,7 +87,7 @@ function App() {
         :
         <>
           <div className='header-container'>
-              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} />
+              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} handleAboutClick = {handleAboutClick} />
             </div><SocialIcons icons={icons} />
               <section className='content-container'>
                 <div className='top-text-container'>
@@ -97,13 +109,24 @@ function App() {
                     </div>
                   </a>
                 </div>
+                <div className = 'scroll-down'>
+                  <span className = 'scroll-text'>scroll down</span>
+                  <AiOutlineArrowDown className = 'scroll-arrow'/>
+                </div>
+                <div className = 'scroll-down scroll-down--left'>
+                  <span className = 'scroll-text'>scroll down</span>
+                  <AiOutlineArrowDown className = 'scroll-arrow'/>
+                </div>
               </section>
-                <section className='projects-container'>
-                  <Projects projectsRef={projectsRef} />
-                </section>  
-                <section className='contact-container'>
-                  <Contact contactRef={contactRef} />
-                </section>
+              <section className='projects-container'>
+                <Projects projectsRef={projectsRef} />
+              </section>
+              <section className='about-container'>
+                <About aboutRef={aboutRef} />
+              </section>
+              <section className='contact-container'>
+                <Contact contactRef={contactRef} />
+              </section>
             </>
  
       }
@@ -201,6 +224,52 @@ const StyledApp = styled.div`
     height: 100vh;
   }
 
+  .scroll-down {
+    position: absolute;
+    right: 2.5em;
+    bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: ${pr => pr.theme.fontSizes.small};
+    color: ${pr => pr.theme.colors.secondary};
+}
+
+.scroll-down--left {
+    left: 4em;
+    right: auto;
+}
+
+.scroll-down span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes bounce-1 {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+      -webkit-transform: translateY(-15px);
+      transform: translateY(-15px);
+  }
+  100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
   @media (max-width: 768px) {
 
 
@@ -213,6 +282,10 @@ const StyledApp = styled.div`
       max-width: 90%;
       margin: auto;
       margin-left: 0;
+  }
+
+  .scroll-down {
+    display: none;
   }
 
 
