@@ -39,6 +39,7 @@ function ContactForm() {
         setSenderName('');
         setSenderEmail('');
         setMessage('');
+        
     }
 
 
