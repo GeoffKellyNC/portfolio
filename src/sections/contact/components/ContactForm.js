@@ -35,10 +35,11 @@ function ContactForm() {
             console.log('Message Sent', res.status, res.text)
             res.status === 200 ? setSuccess(true) : setError('Something went wrong')
         })
-        .catch((err) => console.err('Failed', err))
+        .catch((err) => console.error('Failed', err))
         setSenderName('');
         setSenderEmail('');
         setMessage('');
+        
     }
 
 
