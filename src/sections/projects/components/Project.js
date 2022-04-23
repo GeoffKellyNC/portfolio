@@ -47,8 +47,6 @@ const StyledProject = styled.div`
 
 
     .project-card-img {
-        width: 400px;
-        height: 600px;
         margin-top: 2em;
         padding: 1em;
     }
