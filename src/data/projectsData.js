@@ -28,7 +28,7 @@ export const projectData = [
         title: 'App Tracker',
         description: 'App Tracker is a full stack application that allows users to create, edit, and delete job applications. Applications are shown on front page with color coding set based on their current status. User can track their job application stats as well via the stats page.',
         imageSrc: appTracker,
-        technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript'],
+        technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript', 'Redux'],
         githubLink: 'https://github.com/GeoffKellyNC/job-tracker-app'
     }
 ];
