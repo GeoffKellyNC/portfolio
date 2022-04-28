@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import stewartFastenerHome from '../images/stewart-fastener.webp';
 import apexTobaccoHome from '../images/apex-tobacco-home.webp';
 import appTracker from '../images/app-tracker.webp';
+import blockChainApp from '../images/crypto-app-image.webp';
 
 
 export const projectData = [
@@ -14,6 +15,7 @@ export const projectData = [
         imageSrc: stewartFastenerHome,
         technologies: ['ReactJS', 'VSCode', 'Git', 'API', 'NODE', 'JavaScript'],
         githubLink: 'https://github.com/GeoffKellyNC/stewart-fastener-site',
+        liveLink: 'https://stewart-fastener-site.vercel.app/',
     },
     {
         id: uuid(),
@@ -22,13 +24,24 @@ export const projectData = [
         imageSrc: apexTobaccoHome,
         technologies: ['ReactJS', 'VSCode', 'Git', 'NODE', 'JavaScript'],
         githubLink: 'https://github.com/GeoffKellyNC/apex-tobacco',
+        liveLink: 'https://apex-tobacco.vercel.app/'
     },
     {
         id: uuid(),
         title: 'App Tracker',
         description: 'App Tracker is a full stack application that allows users to create, edit, and delete job applications. Applications are shown on front page with color coding set based on their current status. User can track their job application stats as well via the stats page.',
         imageSrc: appTracker,
-        technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript', 'Redux'],
-        githubLink: 'https://github.com/GeoffKellyNC/job-tracker-app'
+        technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript', 'Redux', 'API', 'PostgreSQL'],
+        githubLink: 'https://github.com/GeoffKellyNC/job-tracker-app',
+        liveLink: 'https://job-tracker-app.vercel.app/'
+    },
+    {
+        id: uuid(),
+        title: 'Blockchain Info',
+        description: 'This is an application showing the utilization of accessing data from an API and displaying that data. This data is pulled from 3 public API sources. Plans for the Application to include authentication and ability to trade, sell, and buy crypto currencies.',
+        imageSrc: blockChainApp,
+        technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'JavaScript', 'Redux', 'API'],
+        githubLink: 'https://github.com/GeoffKellyNC/crypto-tracker',
+        liveLink: 'https://crypto-tracker-app-zeta.vercel.app/'
     }
 ];
