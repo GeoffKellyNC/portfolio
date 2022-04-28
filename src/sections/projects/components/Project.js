@@ -16,10 +16,12 @@ const Project = ({ projectData, projectID, setIsOpen }) => {
 
     return(
         <StyledProject className = 'project-card-container'>
-            <img
-                src = {project.imageSrc}
-                alt = 'Project Screenshot'
-                className = 'project-card-img' />
+            <div className = 'app-img'>
+                <img
+                    src = {project.imageSrc}
+                    alt = 'Project Screenshot'
+                    className = 'project-card-img' />
+            </div>
             <div className = 'project-card-text'>
                 {/* <h2>PROJECT NAME:</h2><span>{project.title}</span> */}
                 <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
