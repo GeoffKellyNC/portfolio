@@ -65,6 +65,8 @@ const StyledProject = styled.div`
     .project-card-img {
         margin-top: 2em;
         padding: 1em;
+        width: 500px;
+        height: 600px;
     }
 
     .project-card-text {
