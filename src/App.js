@@ -2,54 +2,63 @@
 import React, { useState, useRef, useEffect  } from 'react'
 import './App.scss';
 
-import { AiOutlineArrowDown } from 'react-icons/ai';
-
-//!--Importing Styled Components --// <--At bottom of file --
+//--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
 
-
-//!--Components --//
+//--Components --//
 import Header from './sections/header/Header';
 import SocialIcons from './components/SocialIcons'
 import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
 import About from './sections/about/About';
 
-//! -- Icons Data -- //
-import { socialIcons } from './data/socialIconsData';
 
-//!-- Importing Resume PDF --//
+import { socialIcons } from './data/socialIconsData';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+
 import resume from './data/geoff-kelly-2022.pdf';
 
-//!-- Importing Site Loader --//
+//-- Importing Site Loader --//
 import RingLoader from "react-spinners/RingLoader";
 
-//!-- Google Analytics --//
-
+//-- Google Analytics --//
 import RouteChangeTracker from './g-analytics/RouteChangeTracker';
 
 import ReactGA from 'react-ga';
-const TRACKING_ID = "G-2N34692MRR"; 
-ReactGA.initialize(TRACKING_ID);
+
+//--GA Tracking geoffkelly.dev
+const TRACKING_ID_GFK = "G-2N34692MRR"; 
+ReactGA.initialize(TRACKING_ID_GFK);
+
+//--GA Tracking geoffreykelly.dev
+const Tracking_ID_GYK = "G-4J15F9N5KC";
+ReactGA.initialize(Tracking_ID_GYK);
+
+//--GA Tracking cloudyrepair.com 
+const TRACKING_ID_CR = "G-809DS81VSN";
+ReactGA.initialize(TRACKING_ID_CR);
 
 
 function App() {
-  //!--State--//
+  //--State--//
   const [icons] = useState(socialIcons);
   const [loading, setLoading] = useState(true);
 
-  //!--Refs--//
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
 
-  //! Google Analytics --//
+  // Google Analytics --//
   useEffect(() => {
+    ReactGA.initialize(TRACKING_ID_GFK);
+    ReactGA.initialize(Tracking_ID_GYK);
+    ReactGA.initialize(TRACKING_ID_CR);
+
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
 
-//!-- Click Handlers --//
+//-- Click Handlers --//
   const handleProjectClick = () => {
     projectsRef.current.scrollIntoView({
       behavior: 'smooth',
@@ -71,7 +80,7 @@ function App() {
     })
   }
 
-  //!-- Site Pre Loader --//
+  //-- Site Pre Loader --//
 
   useEffect(() => {
 
@@ -89,7 +98,7 @@ function App() {
   return (
     <StyledApp className="App">
       {
-        loading ?                      //!-- Loading Screen --//
+        loading ?                      //-- Loading Screen --//
         <div className = 'loader'>
           <RingLoader
             color = {'red'}
@@ -151,7 +160,7 @@ export default App;
 
 
 
-//!--Styled Components --//
+//--Styled Components --//
 const StyledApp = styled.div`
 
   .content-container {
@@ -205,7 +214,7 @@ const StyledApp = styled.div`
   }
 
 
-  //!-- Resume Button --//
+  //-- Resume Button --//
   .resume-btn {
     border: 1px solid ${pr => pr.theme.colors.primary};
     color: white;
@@ -302,7 +311,7 @@ const StyledApp = styled.div`
   }
 
 
-  //! -- AboutMe Section -- //
+  // -- AboutMe Section -- //
 
  
   
