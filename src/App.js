@@ -24,6 +24,13 @@ import resume from './data/geoff-kelly-2022.pdf';
 //!-- Importing Site Loader --//
 import RingLoader from "react-spinners/RingLoader";
 
+//!-- Google Analytics --//
+
+import RouteChangeTracker from './g-analytics/RouteChangeTracker';
+
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-2N34692MRR"; 
+ReactGA.initialize(TRACKING_ID);
 
 
 function App() {
@@ -35,6 +42,11 @@ function App() {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
+
+  //! Google Analytics --//
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
 
 //!-- Click Handlers --//
@@ -130,6 +142,7 @@ function App() {
             </>
  
       }
+      <RouteChangeTracker />
     </StyledApp>
   );
 }
