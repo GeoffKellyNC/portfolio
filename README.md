@@ -94,6 +94,7 @@ Official Portfolio Build
 - [ ] Add more info to projects sections.
 - [ ] Add more info to contact sections.
 - [ ] Add footer to site.
+- [ ] Integrate spotify API.
 
 
 See the [open issues](https://github.com/geoffkellync/crypto-app-2.0/issues) for a full list of proposed features (and known issues).
