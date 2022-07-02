@@ -56,15 +56,15 @@ function App() {
     })
   }
 
-  //-- Site Pre Loader --//
+  // -- Site Pre Loader --//
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   setTimeout(() => {
-  //       setLoading(!loading)
-  //   }, 2000);
+    setTimeout(() => {
+        setLoading(!loading)
+    }, 2000);
 
-  // },[])
+  },[])
 
 
   return (
