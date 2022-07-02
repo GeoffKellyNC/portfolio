@@ -15,7 +15,7 @@ export const projectData = [
         imageSrc: blockChainApp,
         technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'JavaScript', 'Redux', 'API'],
         githubLink: 'https://github.com/GeoffKellyNC/crypto-tracker',
-        liveLink: 'https://crypto-tracker-app-zeta.vercel.app/'
+        liveLink: 'https://gk-cryptotracker.netlify.app/'
     },
     {
         id: uuid(),
@@ -42,7 +42,7 @@ export const projectData = [
         imageSrc: appTracker,
         technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript', 'Redux', 'API', 'PostgreSQL'],
         githubLink: 'https://github.com/GeoffKellyNC/job-tracker-app',
-        liveLink: 'https://job-tracker-app.vercel.app/'
+        liveLink: 'https://job-app-tracker-gk.netlify.app/'
     },
 
 ];

@@ -44,7 +44,8 @@ const Projects = ({projectsRef}) => {
                     }
                 </div>
                 {
-                    isOpen && <Project projectID = {projectID} projectData = {projectInfo} setIsOpen = {setIsOpen}/>
+                    isOpen ? <Project projectID = {projectID} projectData = {projectInfo} setIsOpen = {setIsOpen}/> : 
+                    <Project projectData = { projectData } projectID = {projectData[0].id} setIsOpen = { setIsOpen } />
                 }
         </StyledProjects>
     )

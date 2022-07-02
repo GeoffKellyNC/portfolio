@@ -10,7 +10,7 @@ export const cardData = [
         moreInfo: 
             {
                 id: uuid(),
-                text: 'Looks Like you found something thats a work in progress. I am working on it. Please check back soon.  ',
+                text: 'Looks Like you found something thats a work in progress. I am working on it. Please check back soon.',
             }
     },
     {

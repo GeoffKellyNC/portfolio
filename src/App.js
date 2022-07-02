@@ -59,7 +59,7 @@ function App() {
 
 
 //-- Click Handlers --//
-  const handleProjectClick = () => {
+  const handleProjectClick = () => { 
     projectsRef.current.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
@@ -91,10 +91,6 @@ function App() {
   },[])
 
 
-
-
-
-
   return (
     <StyledApp className="App">
       {
@@ -109,7 +105,8 @@ function App() {
         <>
           <div className='header-container'>
               <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} handleAboutClick = {handleAboutClick} />
-            </div><SocialIcons icons={icons} />
+            </div>
+              <SocialIcons icons={icons} />
               <section className='content-container'>
                 <div className='top-text-container'>
                   <div className='hi-text'>
@@ -157,7 +154,6 @@ function App() {
 }
 
 export default App;
-
 
 
 //--Styled Components --//
