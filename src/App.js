@@ -12,7 +12,7 @@ import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
 import About from './sections/about/About';
 
-
+// -- Icons --//
 import { socialIcons } from './data/socialIconsData';
 import { AiOutlineArrowDown } from 'react-icons/ai';
 
@@ -21,22 +21,6 @@ import resume from './data/geoff-kelly-2022.pdf';
 //-- Importing Site Loader --//
 import RingLoader from "react-spinners/RingLoader";
 
-//-- Google Analytics --//
-import RouteChangeTracker from './g-analytics/RouteChangeTracker';
-
-import ReactGA from 'react-ga';
-
-//--GA Tracking geoffkelly.dev
-const TRACKING_ID_GFK = "G-2N34692MRR"; 
-ReactGA.initialize(TRACKING_ID_GFK);
-
-//--GA Tracking geoffreykelly.dev
-const Tracking_ID_GYK = "G-4J15F9N5KC";
-ReactGA.initialize(Tracking_ID_GYK);
-
-//--GA Tracking cloudyrepair.com 
-const TRACKING_ID_CR = "G-809DS81VSN";
-ReactGA.initialize(TRACKING_ID_CR);
 
 
 function App() {
@@ -47,15 +31,6 @@ function App() {
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
-
-  // Google Analytics --//
-  useEffect(() => {
-    ReactGA.initialize(TRACKING_ID_GFK);
-    ReactGA.initialize(Tracking_ID_GYK);
-    ReactGA.initialize(TRACKING_ID_CR);
-
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
 
 
 //-- Click Handlers --//
@@ -146,9 +121,7 @@ function App() {
                 <Contact contactRef={contactRef} />
               </section>
             </>
- 
       }
-      <RouteChangeTracker />
     </StyledApp>
   );
 }
