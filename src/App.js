@@ -27,7 +27,7 @@ import RingLoader from "react-spinners/RingLoader";
 function App() {
   //--State--//
   const [icons] = useState(socialIcons);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
