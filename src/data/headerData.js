@@ -23,8 +23,8 @@ export const navData = [
     },
     {   
         id: uuid(),
-        name: 'RESUME',
-        to: './geoff-kelly-2022.pdf',
+        name: 'COMING SOON',
+        to: '/',
         className: 'nav-link nav-about',
         num: '04'
     }

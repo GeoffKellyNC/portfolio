@@ -60,7 +60,11 @@ function ContactForm() {
   return (
         <>
             {
-                success ? <span>Message Sent!</span> : error ? <span>{error}</span> : null
+                success ? <span 
+                            className = 'success-message'
+                            style={{'color': '#F0A202', 'fontSize': '1.5em', 'textAlign': 'center', 'fontFamily': 'Poppins, sans-serif'}}>
+                                Message Sent!</span> : 
+                                error ? <span className='error-message'>{error}</span> : null
             }
             <StyledContactForm onSubmit={sendMail} className = 'contact-form'>
                 <input type = 'text' 
@@ -103,11 +107,12 @@ const StyledContactForm = styled.form`
         align-items: center;
         max-width: 80%;
         margin: 0 auto;
-        ${'' /* border: 1px solid ${props => props.theme.colors.primary}; */}
+
     input{
         margin-bottom: 5%;
         color: white;
     }
+
     .input-box{
         border:0;
         border-bottom:2px solid ${pr => pr.theme.colors.primary};  
@@ -118,14 +123,14 @@ const StyledContactForm = styled.form`
     }
     input::placeholder {
         color: ${pr => pr.theme.colors.secondary};
-        font-family: ${pr => pr.theme.MainFont}
+        font-family: ${pr => pr.theme.fonts.primary}
     }
     textarea {
         color: white;
     }
     textarea::placeholder {
         color: ${pr => pr.theme.colors.secondary};
-        font-family: ${pr => pr.theme.MainFont}
+        font-family: ${pr => pr.theme.fonts.primary}
     }
     button{
         border: 1px solid ${pr => pr.theme.colors.primary};
@@ -145,10 +150,26 @@ const StyledContactForm = styled.form`
         cursor: pointer;
     }
 
+    .success-message{
+        color: ${pr => pr.theme.colors.primary};
+        font-size: 1.2rem;
+        font-family: ${pr => pr.theme.fonts.primary};
+        margin-top: 2rem;
+    }
+
+    .error-message{
+        color: ${pr => pr.theme.colors.secondary};
+        font-size: 1.2rem;
+        font-family: ${pr => pr.theme.fonts.primary};
+        margin-top: 2rem;
+    }
+
+
     @media (max-width: 768px) {
         width: 100%;
         input{
             width: 100%;
+        }
 
     }
 `

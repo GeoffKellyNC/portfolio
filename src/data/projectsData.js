@@ -14,7 +14,7 @@ export const projectData = [
         description: 'This is an application showing the utilization of accessing data from an API and displaying that data. This data is pulled from 3 public API sources. Plans for the Application to include authentication and ability to trade, sell, and buy crypto currencies.',
         imageSrc: blockChainApp,
         technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'JavaScript', 'Redux', 'API'],
-        githubLink: 'https://github.com/GeoffKellyNC/crypto-tracker',
+        githubLink: 'https://github.com/GeoffKellyNC/crypto-app-2.0',
         liveLink: 'https://gk-cryptotracker.netlify.app/'
     },
     {

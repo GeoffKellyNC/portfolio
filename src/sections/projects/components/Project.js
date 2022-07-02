@@ -24,7 +24,7 @@ const Project = ({ projectData, projectID, setIsOpen }) => {
                     className = 'project-card-img' />
             </div>
             <div className = 'project-card-text'>
-                {/* <h2>PROJECT NAME:</h2><span>{project.title}</span> */}
+                <h2 className = 'project-title'> { project.title } </h2>
                 <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
                 <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{project.technologies.join(', ')}</p>
                 <div className = 'project-link-icons'>
@@ -75,7 +75,7 @@ const StyledProject = styled.div`
         flex-wrap: wrap;
         justify-content: center;
         padding-left: 8%;
-        gap: 3em;
+        gap: 2em;
     }
 
     .project-card-text h2 {
@@ -85,6 +85,10 @@ const StyledProject = styled.div`
     .project-card-text span {
         font-size: ${pr => pr.theme.fontSizes.small};
         margin-top: 5px;
+    }
+
+    .project-title{
+       color: ${pr => pr.theme.colors.secondary};
     }
 
     .project-desc{

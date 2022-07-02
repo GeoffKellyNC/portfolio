@@ -11,6 +11,7 @@ import SocialIcons from './components/SocialIcons'
 import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
 import About from './sections/about/About';
+import Footer from './sections/footer/Footer';
 
 // -- Icons --//
 import { socialIcons } from './data/socialIconsData';
@@ -26,7 +27,7 @@ import RingLoader from "react-spinners/RingLoader";
 function App() {
   //--State--//
   const [icons] = useState(socialIcons);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
@@ -57,13 +58,13 @@ function App() {
 
   //-- Site Pre Loader --//
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setTimeout(() => {
-        setLoading(!loading)
-    }, 2000);
+  //   setTimeout(() => {
+  //       setLoading(!loading)
+  //   }, 2000);
 
-  },[])
+  // },[])
 
 
   return (
@@ -119,6 +120,9 @@ function App() {
               </section>
               <section className='contact-container'>
                 <Contact contactRef={contactRef} />
+              </section>
+              <section className = 'footer-container'>
+                <Footer />
               </section>
             </>
       }
@@ -227,11 +231,13 @@ const StyledApp = styled.div`
     justify-content: center;
     font-size: ${pr => pr.theme.fontSizes.small};
     color: ${pr => pr.theme.colors.secondary};
+    font-family: ${pr => pr.theme.fonts.primary};
 }
 
 .scroll-down--left {
     left: 4em;
     right: auto;
+    font-family: ${pr => pr.theme.fonts.primary};
 }
 
 .scroll-down span {

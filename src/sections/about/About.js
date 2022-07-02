@@ -30,7 +30,7 @@ function About( { aboutRef } ) {
         </div>
         <div className = 'blob'></div>
         <div className = 'card-container'>
-        {
+        { 
             data.map(card => {
                 return(
                     <Cards key = {card.id} info = {card} handleCardClick = {handleCardClick} />

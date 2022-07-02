@@ -17,7 +17,7 @@ function CardInfo({cardID, cardInfo, setIsOpen}) {
 
     
 
-  // }, [])
+  // }, []) 
 
   
 

@@ -9,8 +9,6 @@ import { projectData } from '../../data/projectsData';
 import Project from './components/Project';
 
 
-
-
 const Projects = ({projectsRef}) => {
     const [projectInfo] = useState(projectData);
     const [projectID, setProjectID] = useState(null);
@@ -19,7 +17,17 @@ const Projects = ({projectsRef}) => {
 
     const handleProjectClick = (id) => {
         setProjectID(id);
-        setIsOpen(true);
+        setIsOpen(!isOpen);
+        const button = document.querySelector(`.project-${id}`);
+        button.classList.toggle('active');
+        const buttons = document.querySelectorAll('.project-button');
+        buttons.forEach(button => {
+            if (button.classList.contains('active') && button !== document.querySelector(`.project-${id}`)) {
+                button.classList.remove('active');
+            }
+        })
+
+
     }
 
 
@@ -35,7 +43,7 @@ const Projects = ({projectsRef}) => {
                         projectInfo.map(project => {
                             return(
                                 <button 
-                                    className = 'project-button '
+                                    className = {`project-button project-${project.id}`}
                                     key = {project.id}
                                     onClick = {() => {handleProjectClick(project.id)} }
                                     > {project.title}</button>
@@ -65,6 +73,7 @@ const StyledProjects = styled.div`
     margin-top: 20em;
     color: ${pr => pr.theme.colors.primary};
     font-family: ${pr => pr.theme.fonts.secondary};
+
 
     .project-title {
         margin: 2em 0;
@@ -134,6 +143,12 @@ const StyledProjects = styled.div`
             color: ${pr => pr.theme.colors.primary};
     }
     }
+
+    .active {
+        background: ${pr => pr.theme.colors.secondary};
+        color: ${pr => pr.theme.colors.primary};
+    }
+
   
     @media (max-width: 768px) {
         font-size: 1em;
