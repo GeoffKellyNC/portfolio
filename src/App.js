@@ -1,21 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect  } from 'react'
+import Typewriter from 'typewriter-effect';
 import './App.scss';
 
 //--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
 
 //--Components --//
-import Header from './sections/header/Header';
-import SocialIcons from './components/SocialIcons'
-import Projects from './sections/projects/Projects';
-import Contact from './sections/contact/Contact';
 import About from './sections/about/About';
+import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
+import Header from './sections/header/Header';
+import Projects from './sections/projects/Projects';
+import SocialIcons from './components/SocialIcons'
+import TypeText from './components/TypeText'
+
 
 // -- Icons --//
-import { socialIcons } from './data/socialIconsData';
 import { AiOutlineArrowDown } from 'react-icons/ai';
+import { socialIcons } from './data/socialIconsData';
 
 import resume from './data/geoff-kelly-2022.pdf';
 
@@ -27,7 +30,7 @@ import RingLoader from "react-spinners/RingLoader";
 function App() {
   //--State--//
   const [icons] = useState(socialIcons);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
@@ -61,7 +64,7 @@ function App() {
   useEffect(() => {
 
     setTimeout(() => {
-        setLoading(!loading)
+        setLoading(false)
     }, 2000);
 
   },[])
@@ -89,10 +92,33 @@ function App() {
                     <h1 className='text'>Hi, my name is</h1>
                   </div>
                   <div className='name-text'>
-                    <h2 className='text'>Geoff Kelly</h2>
+                    <Typewriter 
+                      options={{
+                        cursor: '|',
+                        wrapperClassName: 'text',
+                        cursorClassName: 'text-cursor',
+                        delay: 100,
+                      }}
+                      onInit={(typewriter) => {
+                        typewriter.typeString('Geoff Kelly')
+                        .start()
+                      }}
+                    />
                   </div>
                   <div className='statement-text'>
-                    <h3> Problem Solver. Full Stack Developer</h3>
+                    <span className='who-text'>Who I am...</span>
+                    <Typewriter 
+                      options={{
+                        cursor: '|',
+                        wrapperClassName: 'statement-text-type',
+                        cursorClassName: 'statement-cursor',
+                        delay: 50,
+                        strings: ["Problem Solver", "Full Stack Developer", "Creative", "Team Player", "Empathetic"],
+                        loop: true,
+                        autoStart: true,
+                        loopWait: 1000,
+                      }}
+                    />
                   </div>
                   <div className='about-paragraph'>
                     <p className='text'> I am a software engineer specializing in building (and occasionally designing) full stack applications.I have a passion for problem solving and a love for learning new technologies.I am currently looking for ways to continue to grow my abilities.</p>
@@ -173,17 +199,54 @@ const StyledApp = styled.div`
     font-weight: 300;
   }
 
+  .who-text{
+    font-size: ${pr => pr.theme.fontSizes.large};
+    color: ${pr => pr.theme.colors.primary};
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-weight: 300;
+    padding-right: 0.5em;
+  }
+
+  .statement-text{
+    display: flex;
+    flex-direction: row;  
+    justify-content: center;
+    align-items: center;
+  }
+
+  .statement-text-type {
+    font-size: ${pr => pr.theme.fontSizes.large};
+    color: ${pr => pr.theme.colors.secondary};
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-weight: 300;
+  }
+
+  .statement-cursor {
+    font-size: ${pr => pr.theme.fontSizes.large};
+    color: ${pr => pr.theme.colors.secondary};
+    font-family: ${pr => pr.theme.fonts.primary};
+    font-weight: 300;
+  }
+
   .top-text-container p {
     font-size: ${pr => pr.theme.fontSizes.tiny};
     color: white;
     font-family: ${pr => pr.theme.fonts.primary};
     font-weight: 300;
     max-width: 50em;
-    padding-top: 2em;
+    padding-top: 1em;
   }
 
   .text{
     margin-bottom: 1rem;
+    font-size: ${pr => pr.theme.fontSizes.large};
+    font-weight: bold;
+    color: white;
+    font-family: ${pr => pr.theme.fonts.primary};
+  }
+
+  .text-cursor{
+    display: none;
   }
 
 
@@ -191,7 +254,7 @@ const StyledApp = styled.div`
   .resume-btn {
     border: 1px solid ${pr => pr.theme.colors.primary};
     color: white;
-    margin: 2rem 0;
+    margin: 1rem 0;
     border-radius: 8px;
   }
 
@@ -285,8 +348,24 @@ const StyledApp = styled.div`
     display: none;
   }
 
+  .who-text{
+    font-size: ${pr => pr.theme.fontSizes.medium};
 
-  // -- AboutMe Section -- //
+  }
+
+
+  .statement-text-type {
+    font-size: ${pr => pr.theme.fontSizes.medium};
+
+  }
+
+  .statement-cursor {
+    font-size: ${pr => pr.theme.fontSizes.medium};
+
+  }
+  }
+
+
 
  
   
