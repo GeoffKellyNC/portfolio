@@ -13,7 +13,6 @@ import Footer from './sections/footer/Footer';
 import Header from './sections/header/Header';
 import Projects from './sections/projects/Projects';
 import SocialIcons from './components/SocialIcons'
-import TypeText from './components/TypeText'
 
 
 // -- Icons --//
