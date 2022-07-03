@@ -97,7 +97,7 @@ const StyledProjects = styled.div`
     top: -15px;
     width: 200px;
     height: 3px;
-    margin-left: 7.5em;
+    margin-left: 8.5em;
     background: linear-gradient(
       60deg,
       hsl(224, 85%, 66%),

@@ -120,8 +120,7 @@ function App() {
                 href={resume}
                 target="_blank"
                 rel="noreferrer"
-                className="resume-link"
-              >
+                className="resume-link">
                 <div className="resume-btn">
                   <span className="resume-text">RESUME</span>
                 </div>
