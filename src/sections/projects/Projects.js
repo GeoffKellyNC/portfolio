@@ -68,7 +68,7 @@ const StyledProjects = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20em;
+    margin-top: 23em;
     color: ${pr => pr.theme.colors.primary};
     font-family: ${pr => pr.theme.fonts.secondary};
 
