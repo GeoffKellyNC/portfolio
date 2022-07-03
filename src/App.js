@@ -1,30 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useRef, useEffect  } from 'react'
-import Typewriter from 'typewriter-effect';
 import './App.scss';
 
+import React, {useEffect, useRef, useState} from 'react'
+// -- Icons --//
+import {AiOutlineArrowDown} from 'react-icons/ai';
+//-- Importing Site Loader --//
+import RingLoader from "react-spinners/RingLoader";
 //--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
+import Typewriter from 'typewriter-effect';
 
+import SocialIcons from './components/SocialIcons'
+import resume from './data/geoff-kelly-2022.pdf';
+import {socialIcons} from './data/socialIconsData';
 //--Components --//
 import About from './sections/about/About';
 import Contact from './sections/contact/Contact';
 import Footer from './sections/footer/Footer';
 import Header from './sections/header/Header';
 import Projects from './sections/projects/Projects';
-import SocialIcons from './components/SocialIcons'
-
-
-// -- Icons --//
-import { AiOutlineArrowDown } from 'react-icons/ai';
-import { socialIcons } from './data/socialIconsData';
-
-import resume from './data/geoff-kelly-2022.pdf';
-
-//-- Importing Site Loader --//
-import RingLoader from "react-spinners/RingLoader";
-
-
 
 function App() {
   //--State--//
@@ -35,61 +29,50 @@ function App() {
   const contactRef = useRef(null);
   const aboutRef = useRef(null);
 
+  //-- Click Handlers --//
+  const handleProjectClick =
+      () => {
+        projectsRef.current.scrollIntoView(
+            {behavior : 'smooth', block : 'start'})
+      }
 
-//-- Click Handlers --//
-  const handleProjectClick = () => { 
-    projectsRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
+  const handleContactClick =
+      () => {
+        contactRef.current.scrollIntoView(
+            {behavior : 'smooth', block : 'start'})
+      }
 
-  const handleContactClick = () => {
-    contactRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
-
-  const handleAboutClick = () => {
-    aboutRef.current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  }
+  const handleAboutClick =
+      () => {
+        aboutRef.current.scrollIntoView({behavior : 'smooth', block : 'start'})
+      }
 
   // -- Site Pre Loader --//
 
   useEffect(() => {
-
-    setTimeout(() => {
-        setLoading(false)
-    }, 2000);
-
-  },[])
-
+    setTimeout(() => {setLoading(false)}, 2000);
+  }, [])
 
   return (
     <StyledApp className="App">
       {
-        loading ?                      //-- Loading Screen --//
-        <div className = 'loader'>
-          <RingLoader
-            color = {'red'}
-            loading = {loading} 
-            size = {"10em"} /> 
-        </div>
-        :
-        <>
-          <div className='header-container'>
-              <Header handleProjectClick={handleProjectClick} handleContactClick={handleContactClick} handleAboutClick = {handleAboutClick} />
+    loading ? //-- Loading Screen --//
+        <div className = 'loader'>< RingLoader
+    color = {'red'} loading = {loading} size =
+    { "10em" } /> 
+        </div >: <><div className = 'header-container'>
+        <Header handleProjectClick = {handleProjectClick} handleContactClick =
+             {handleContactClick} handleAboutClick =
+         { handleAboutClick } />
             </div>
-              <SocialIcons icons={icons} />
+        <SocialIcons icons =
+         { icons
+         } />
               <section className='content-container'>
                 <div className='top-text-container'>
                   <div className='hi-text'>
                     <h1 className='text'>Hi, my name is</h1>
-                  </div>
+        </div>
                   <div className='name-text'>
                     <Typewriter 
                       options={{
@@ -103,19 +86,19 @@ function App() {
                         .start()
                       }}
                     />
-                  </div>
+        </div>
                   <div className='statement-text'>
-                    <span className='who-text'>Who I am...</span>
-                    <Typewriter 
+                    <span className='who-text'>Who I am...</span><
+        Typewriter
                       options={{
-                        cursor: '|',
-                        wrapperClassName: 'statement-text-type',
-                        cursorClassName: 'statement-cursor',
-                        delay: 50,
-                        strings: ["Problem Solver", "Full Stack Developer", "Creative", "Team Player", "Empathetic"],
-                        loop: true,
-                        autoStart: true,
-                        loopWait: 1000,
+      cursor: '|', wrapperClassName: 'statement-text-type',
+          cursorClassName: 'statement-cursor', delay: 50,
+          strings:
+              [
+                "Problem Solver", "Full Stack Developer", "Creative",
+                "Team Player", "Empathetic"
+              ],
+          loop: true, autoStart: true, loopWait: 1000,
                       }}
                     />
                   </div>
