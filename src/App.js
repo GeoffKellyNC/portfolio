@@ -66,7 +66,7 @@ function App() {
               handleAboutClick={handleAboutClick}
             />
           </div>
-         
+
           <SocialIcons icons={icons} />
           <section className="content-container">
             <div className="top-text-container">
@@ -158,17 +158,15 @@ export default App;
 
 //--Styled Components --//
 const StyledApp = styled.div`
-
   .main-container {
     width: 100%;
     height: 500vh;
     background-color: rgb(0 164 255 / 9%);
-    ${'' /* overflow: hidden; */}
+    ${"" /* overflow: hidden; */}
     position: absolute;
     top: 0;
     left: 0;
-    ${'' /* z-index: 499; */}
-    
+    ${"" /* z-index: 499; */}
   }
   .content-container {
     display: flex;

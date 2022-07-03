@@ -1,53 +1,56 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import "./scss/about.scss";
 
-import CardInfo from './components/CardInfo'
+import React, { useState } from "react";
+import styled from "styled-components";
 
+import { cardData } from "../../data/aboutData";
 
-import Cards from './components/Cards'
+import CardInfo from "./components/CardInfo";
+import Cards from "./components/Cards";
 
-import { cardData } from '../../data/aboutData'
+function About({ aboutRef }) {
+  const [data] = useState(cardData);
+  const [cardID, setCardID] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-import './scss/about.scss'
-
-function About( { aboutRef } ) {
-    const [data] = useState(cardData)
-    const [cardID, setCardID] = useState(null)
-    const [isOpen, setIsOpen] = useState(false)
-
-
-    const handleCardClick = (id) => {
-        setCardID(id)
-        setIsOpen(true)
-    }
+  const handleCardClick = (id) => {
+    setCardID(id);
+    setIsOpen(true);
+  };
 
   return (
     <StyledAbout>
-        <div ref = {aboutRef} className = 'about-title'>
-            <h1>
-                <span className = 'num-title'>02.</span>
-            ABOUT</h1>
-        </div>
-        <div className = 'blob'></div>
-        <div className = 'card-container'>
-        { 
-            data.map(card => {
-                return(
-                    <Cards key = {card.id} info = {card} handleCardClick = {handleCardClick} />
-                )
-            })
-        }
-        {
-            isOpen && <CardInfo cardID = {cardID} cardInfo = {data} setIsOpen = {setIsOpen} isOpen = {isOpen} />
-        }
-        </div>
-
+      <div ref={aboutRef} className="about-title">
+        <h1>
+          <span className="num-title">02.</span>
+          ABOUT
+        </h1>
+      </div>
+      <div className="blob"></div>
+      <div className="card-container">
+        {data.map((card) => {
+          return (
+            <Cards
+              key={card.id}
+              info={card}
+              handleCardClick={handleCardClick}
+            />
+          );
+        })}
+        {isOpen && (
+          <CardInfo
+            cardID={cardID}
+            cardInfo={data}
+            setIsOpen={setIsOpen}
+            isOpen={isOpen}
+          />
+        )}
+      </div>
     </StyledAbout>
-  )
+  );
 }
 
-export default About
-
+export default About;
 
 const StyledAbout = styled.div`
     display: flex;
@@ -55,16 +58,16 @@ const StyledAbout = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 30em;
-    font-family: ${pr => pr.theme.fonts.secondary};
+    font-family: ${(pr) => pr.theme.fonts.secondary};
 
     .about-title {
         margin: 2em 0;
-        color: ${pr => pr.theme.colors.primary}
+        color: ${(pr) => pr.theme.colors.primary}
     }
 
     .num-title {
         margin-right: 0.5em;
-        color: ${pr => pr.theme.colors.secondary};
+        color: ${(pr) => pr.theme.colors.secondary};
     }
 
     h1::after{
@@ -95,7 +98,7 @@ const StyledAbout = styled.div`
     .blob{
         max-width: 100%;
         margin-top: 5em;
-        
+
     }
 
     .card-container {
@@ -121,4 +124,4 @@ const StyledAbout = styled.div`
 
 
 
-`
+`;
