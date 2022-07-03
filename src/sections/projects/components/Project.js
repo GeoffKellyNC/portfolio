@@ -1,18 +1,18 @@
 import React from "react";
-import {CgWebsite} from "react-icons/cg";
-import {FaGithubSquare} from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
+import { FaGithubSquare } from "react-icons/fa";
 import styled from "styled-components";
 
-const Project = ({projectData, projectID, setIsOpen}) => {
+const Project = ({ projectData, projectID, setIsOpen }) => {
   const project = projectData.find((project) => project.id === projectID);
-  if (!projectData.length)
-    return "Loading...";
+  if (!projectData.length) return "Loading...";
 
   return (
     <StyledProject className="project-card-container">
       <div className="app-img">
         <img
-  src = {project.imageSrc} alt = "Project Screenshot"
+          src={project.imageSrc}
+          alt="Project Screenshot"
           className="project-card-img"
         />
       </div>
