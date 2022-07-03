@@ -58,7 +58,7 @@ function App() {
         </div>
       ) : (
         <>
-          <div className="main-container"></div>
+          <div className="overlay"></div>
           <div className="header-container">
             <Header
               handleProjectClick={handleProjectClick}
@@ -157,7 +157,9 @@ export default App;
 
 //--Styled Components --//
 const StyledApp = styled.div`
-  .main-container {
+
+
+  .overlay{
     width: 100%;
     height: 500vh;
     background-color: rgb(0 164 255 / 9%);
@@ -165,7 +167,6 @@ const StyledApp = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    ${"" /* z-index: 499; */}
   }
   .content-container {
     display: flex;
