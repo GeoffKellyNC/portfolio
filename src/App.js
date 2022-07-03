@@ -58,6 +58,7 @@ function App() {
         </div>
       ) : (
         <>
+          <div className="main-container"></div>
           <div className="header-container">
             <Header
               handleProjectClick={handleProjectClick}
@@ -65,6 +66,7 @@ function App() {
               handleAboutClick={handleAboutClick}
             />
           </div>
+
           <SocialIcons icons={icons} />
           <section className="content-container">
             <div className="top-text-container">
@@ -95,7 +97,7 @@ function App() {
                     strings: [
                       "Problem Solver",
                       "Full Stack Developer",
-                      "Creative",
+                      "Driven to learn",
                       "Team Player",
                       "Empathetic",
                     ],
@@ -107,7 +109,6 @@ function App() {
               </div>
               <div className="about-paragraph">
                 <p className="text">
-                  {" "}
                   I am a software engineer specializing in building (and
                   occasionally designing) full stack applications.I have a
                   passion for problem solving and a love for learning new
@@ -157,12 +158,22 @@ export default App;
 
 //--Styled Components --//
 const StyledApp = styled.div`
+  .main-container {
+    width: 100%;
+    height: 500vh;
+    background-color: rgb(0 164 255 / 9%);
+    ${"" /* overflow: hidden; */}
+    position: absolute;
+    top: 0;
+    left: 0;
+    ${"" /* z-index: 499; */}
+  }
   .content-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10em;
+    margin-top: 15em;
   }
 
   .top-text-container {
