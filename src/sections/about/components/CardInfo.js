@@ -44,19 +44,22 @@ export default CardInfo
 const StyledCardInfo = styled.div`
   margin: 0;
   padding: 0;
+  font-family: ${props => props.theme.fonts.primary};
 
   .card-info-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 20em;
+    margin: 0 auto;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
     padding: 2em;
     position: relative;
+    color: ${props => props.theme.colors.secondary};
   }
 
 

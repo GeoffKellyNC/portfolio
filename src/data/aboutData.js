@@ -10,7 +10,7 @@ export const cardData = [
         moreInfo: 
             {
                 id: uuid(),
-                text: 'Looks Like you found something thats a work in progress. I am working on it. Please check back soon.',
+                text: 'I love using technologies to bring ideas to life and make improve the quality of peoples lives. I feel my unique life experiences, give me a unique perspective on the world, and I want to combine that experience with my skills to create a better world, through technology.',
             }
     },
     {
