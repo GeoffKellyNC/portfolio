@@ -95,7 +95,7 @@ function App() {
                     strings: [
                       "Problem Solver",
                       "Full Stack Developer",
-                      "Creative",
+                      "Driven to learn",
                       "Team Player",
                       "Empathetic",
                     ],
@@ -107,7 +107,6 @@ function App() {
               </div>
               <div className="about-paragraph">
                 <p className="text">
-                  {" "}
                   I am a software engineer specializing in building (and
                   occasionally designing) full stack applications.I have a
                   passion for problem solving and a love for learning new
