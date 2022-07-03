@@ -113,7 +113,7 @@ const StyledProject = styled.div`
         transition: all .2s ease-in-out;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
         display: flex;
         flex-direction: column;
         justify-content: center;

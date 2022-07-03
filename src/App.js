@@ -159,8 +159,8 @@ export default App;
 const StyledApp = styled.div`
 
   .overlay{
-    width: 100%;
-    height: 500vh;
+    width: 100vw;
+    height: 520vh;
     background-color: rgb(0 164 255 / 9%);
     ${"" /* overflow: hidden; */}
     position: absolute;
@@ -331,10 +331,15 @@ const StyledApp = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
+
     .top-text-container {
       margin-left: 1rem;
       margin-top: 0;
+    }
+
+    .overlay {
+      height: 700vh;
     }
 
     .top-text-container p {

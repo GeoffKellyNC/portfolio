@@ -168,7 +168,7 @@ const StyledProjects = styled.div`
     border: none;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     font-size: 1em;
     padding: 0.5em 1em;
     margin: 0.5em;
