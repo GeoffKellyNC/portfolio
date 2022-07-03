@@ -15,6 +15,7 @@ import resume from "./data/geoff-kelly-2022.pdf";
 import { socialIcons } from "./data/socialIconsData";
 //--Components --//
 import About from "./sections/about/About";
+import BlobImg from './components/BlobImg'
 import Contact from "./sections/contact/Contact";
 import Footer from "./sections/footer/Footer";
 import Header from "./sections/header/Header";
@@ -58,6 +59,7 @@ function App() {
         </div>
       ) : (
         <>
+          <div className="main-container"></div>
           <div className="header-container">
             <Header
               handleProjectClick={handleProjectClick}
@@ -65,8 +67,10 @@ function App() {
               handleAboutClick={handleAboutClick}
             />
           </div>
+         
           <SocialIcons icons={icons} />
           <section className="content-container">
+            {/* <BlobImg /> */}
             <div className="top-text-container">
               <div className="hi-text">
                 <h1 className="text">Hi, my name is</h1>
@@ -156,6 +160,21 @@ export default App;
 
 //--Styled Components --//
 const StyledApp = styled.div`
+
+  .main-container {
+    width: 100%;
+    height: 500vh;
+    background-color: rgb(0 164 255 / 9%);
+    ${'' /* overflow: hidden; */}
+    position: absolute;
+    top: 0;
+    left: 0;
+    ${'' /* z-index: 499; */}
+    
+  }
+
+
+
   .content-container {
     display: flex;
     flex-direction: column;

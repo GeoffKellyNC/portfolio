@@ -1,18 +1,39 @@
-$background_color: #000;
-$time: 20s;
+import React from 'react'
+import styled from 'styled-components'
 
-.blob {
+const BlobImg = () => {
+  return (
+    <Blob>
+        <div className = 'blob-component'></div>
+    </Blob>
+  )
+}
+
+export default BlobImg
+
+const blobTime = '20s'
+
+const blobSize = {
+    width: '20em',
+    height: '20em'
+}
+
+const Blob = styled.div`
+    position: absolute;
+    z-index: -1;
+
+.blob-component {
     display: block;
     position: relative;
-    width: 25em;
-    height: 25em;
+    width: ${blobSize.width};
+    height: ${blobSize.height};
     overflow: hidden;
     border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
     background: linear-gradient(to right, #23D5AB, #23A6D5, #E73C7E, #EE7752, #DDD6F3);
     background-size: 500% 100%;
     animation: 
-        blobber $time 0s linear infinite,
-        cobler $time 0s linear infinite alternate;
+        blobber ${blobTime} 0s linear infinite,
+        cobler ${blobTime} 0s linear infinite alternate;
     
     &:after {
         content: '';
@@ -23,13 +44,13 @@ $time: 20s;
         bottom: 5px;
         left: 5px;
         background-color: #000;
-        background-image: url(https://i.imgur.com/hMedIj4.jpg);
+        background-color: #27272C;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply;
         animation:
-            blobber $time 0s ease-in-out infinite,
+            blobber ${blobTime} 0s ease-in-out infinite,
             wobbler 15s 0s linear infinite alternate;
     }
 }
@@ -76,10 +97,5 @@ $time: 20s;
     }
 }
 
-//
-// Page Default Styles
-//
 
-
-
-
+`

@@ -49,7 +49,6 @@ function About( { aboutRef } ) {
 export default About
 
 
-
 const StyledAbout = styled.div`
     display: flex;
     flex-direction: column;
