@@ -1,14 +1,14 @@
 import "./scss/about.scss";
 
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
-import { cardData } from "../../data/aboutData";
+import {cardData} from "../../data/aboutData";
 
 import CardInfo from "./components/CardInfo";
 import Cards from "./components/Cards";
 
-function About({ aboutRef }) {
+function About({aboutRef}) {
   const [data] = useState(cardData);
   const [cardID, setCardID] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,8 @@ function About({ aboutRef }) {
             <Cards
               key={card.id}
               info={card}
-              handleCardClick={handleCardClick}
+              handleCardClick={
+      handleCardClick}
             />
           );
         })}

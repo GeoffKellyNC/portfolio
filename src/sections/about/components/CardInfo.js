@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-function CardInfo({ cardID, cardInfo, setIsOpen }) {
+function CardInfo({cardID, cardInfo, setIsOpen}) {
   // useEffect(() => {
 
   //   let cardClass = document.querySelector('.card-info')
@@ -19,9 +19,10 @@ function CardInfo({ cardID, cardInfo, setIsOpen }) {
   const selectedCard = cardInfo.find((card) => card.id === cardID);
 
   return (
-    <StyledCardInfo className={`${selectedCard.title}-card-info card-info`}>
-      <div className={`card-info-container ${selectedCard.title}`}>
-        <div>{selectedCard.moreInfo.text}</div>
+      <StyledCardInfo className = {`${selectedCard.title}-card-info card-info`}>
+      <div className = {`card-info-container ${selectedCard.title}`}>
+      <div>{selectedCard.moreInfo.text}<
+          /div>
         <button
           onClick={() => {
             setIsOpen(false);
@@ -30,8 +31,7 @@ function CardInfo({ cardID, cardInfo, setIsOpen }) {
           Close
         </button>
       </div>
-    </StyledCardInfo>
-  );
+    </StyledCardInfo>);
 }
 
 export default CardInfo;
@@ -71,14 +71,14 @@ const StyledCardInfo = styled.div`
 
   @media (max-width: 1140px) {
     ${
-      "" /* position: absolute;
-top: -90em;
-left: 0;
-border-radius: 5px;
-box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-padding: 2em;
-z-index: 1; */
-    }
+                                                    "" /* position: absolute;
+                                              top: -90em;
+                                              left: 0;
+                                              border-radius: 5px;
+                                              box-shadow: 0px 0px 10px
+                                              rgba(0,0,0,0.5); padding: 2em;
+                                              z-index: 1; */
+}
 
     .About {
       width: 100%;
