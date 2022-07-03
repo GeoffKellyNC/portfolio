@@ -158,7 +158,6 @@ export default App;
 //--Styled Components --//
 const StyledApp = styled.div`
 
-
   .overlay{
     width: 100%;
     height: 500vh;
