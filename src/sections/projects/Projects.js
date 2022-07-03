@@ -17,7 +17,7 @@ const Projects = ({projectsRef}) => {
 
     const handleProjectClick = (id) => {
         setProjectID(id);
-        setIsOpen(!isOpen);
+        setIsOpen(true);
         const button = document.querySelector(`.project-${id}`);
         button.classList.toggle('active');
         const buttons = document.querySelectorAll('.project-button');
