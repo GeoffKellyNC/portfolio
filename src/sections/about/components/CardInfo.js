@@ -2,46 +2,39 @@ import React from 'react'
 import styled from 'styled-components'
 
 function CardInfo({cardID, cardInfo, setIsOpen}) {
-    
-
 
   // useEffect(() => {
 
   //   let cardClass = document.querySelector('.card-info')
   //   const cl = cardClass.classList.value
 
+  //   return cl.includes('About-card-info') ?
+  //   cardClass.style.setProperty('top','-90em') :
+  //   cl.classList.includes('Technology-card-info') ?
+  //   cardClass.style.setProperty('top','-60em') :
+  //   cl.classList.includes('Interests-card-info') ?
+  //   cardClass.style.setProperty('top','-30em') : null
 
-  //   return cl.includes('About-card-info') ? cardClass.style.setProperty('top','-90em') :
-  //   cl.classList.includes('Technology-card-info') ? cardClass.style.setProperty('top','-60em') :
-  //   cl.classList.includes('Interests-card-info') ? cardClass.style.setProperty('top','-30em') : null
+  // }, [])
 
-    
+  const selectedCard = cardInfo.find(card => card.id === cardID)
 
-  // }, []) 
-
-  
-
-
-    const selectedCard = cardInfo.find(card => card.id === cardID)
-
-
-    return (
-    <StyledCardInfo className = {`${selectedCard.title}-card-info card-info`}>
-      <div className = {`card-info-container ${selectedCard.title}`} >
-        <div> {selectedCard.moreInfo.text} </div>
+  return (
+      <StyledCardInfo className = {`${selectedCard.title}-card-info card-info`}>
+      <div className = {`card-info-container ${selectedCard.title}`}>
+      <div>{selectedCard.moreInfo.text}<
+          /div>
         <button onClick = {() =>{
           setIsOpen(false)
           }}>Close</button>
       </div>
-    </StyledCardInfo>
-  )
+    </StyledCardInfo>)
 }
 
 export default CardInfo
 
-
-
-const StyledCardInfo = styled.div`
+const StyledCardInfo = styled
+                           .div`
   margin: 0;
   padding: 0;
   font-family: ${props => props.theme.fonts.primary};
@@ -77,12 +70,12 @@ const StyledCardInfo = styled.div`
 
   @media(max-width: 1140px){
     ${'' /* position: absolute;
-    top: -90em;
-    left: 0;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-    padding: 2em;
-    z-index: 1; */}
+top: -90em;
+left: 0;
+border-radius: 5px;
+box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+padding: 2em;
+z-index: 1; */}
 
     .About {
       width: 100%;

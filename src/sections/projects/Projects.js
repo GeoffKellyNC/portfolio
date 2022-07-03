@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 //! -- Importing Project Images -- //
 
 //! -- Import Project Data -- //
-import { projectData } from '../../data/projectsData';
+import {projectData} from '../../data/projectsData';
 
 import Project from './components/Project';
 
-
 const Projects = ({projectsRef}) => {
-    const [projectInfo] = useState(projectData);
-    const [projectID, setProjectID] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
+  const [projectInfo] = useState(projectData);
+  const [projectID, setProjectID] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-
-    const handleProjectClick = (id) => {
+  const handleProjectClick =
+      (id) => {
         setProjectID(id);
         setIsOpen(true);
         const button = document.querySelector(`.project-${id}`);
         button.classList.toggle('active');
         const buttons = document.querySelectorAll('.project-button');
         buttons.forEach(button => {
-            if (button.classList.contains('active') && button !== document.querySelector(`.project-${id}`)) {
-                button.classList.remove('active');
-            }
+          if (button.classList.contains('active') &&
+              button !== document.querySelector(`.project-${id}`)) {
+            button.classList.remove('active');
+          }
         })
-    }
+      }
 
-
-    return(
-        <StyledProjects className = 'project-container' ref = {projectsRef} >
-            <div  className = 'project-title'>
-                <h1>
-                    <span className = 'num-title'>01.</span>
-                Projects</h1>
-            </div>
+  return (
+      <StyledProjects className = 'project-container' ref = {projectsRef}>
+      <div className = 'project-title'><h1><span className = 'num-title'>01. <
+      /span>
+                Projects</h1 >
+      </div>
                 <div className = 'project-button-container'>
                     {
                         projectInfo.map(project => {
@@ -44,10 +42,9 @@ const Projects = ({projectsRef}) => {
                                     className = {`project-button project-${project.id}`}
                                     key = {project.id}
                                     onClick = {() => {handleProjectClick(project.id)} }
-                                    > {project.title}</button>
-                            )
+                                    > {project.title}</button>)
                         })
-                    }
+}
                 </div>
                 {
                     isOpen ? <Project projectID = {projectID} projectData = {projectInfo} setIsOpen = {setIsOpen}/> : 
@@ -55,15 +52,11 @@ const Projects = ({projectsRef}) => {
                 }
         </StyledProjects>
     )
-}
+                }
 
-export default Projects;
+                export default Projects;
 
-
-
-
-
-const StyledProjects = styled.div`
+                const StyledProjects = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,10 +167,3 @@ const StyledProjects = styled.div`
     }
 
 `;
-    
-
-
-
-
-
-

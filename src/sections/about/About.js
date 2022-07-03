@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-
-import CardInfo from './components/CardInfo'
-
-
-import Cards from './components/Cards'
-
-import { cardData } from '../../data/aboutData'
-
 import './scss/about.scss'
 
-function About( { aboutRef } ) {
-    const [data] = useState(cardData)
-    const [cardID, setCardID] = useState(null)
-    const [isOpen, setIsOpen] = useState(false)
+import React, {useState} from 'react'
+import styled from 'styled-components'
 
+import {cardData} from '../../data/aboutData'
+
+import CardInfo from './components/CardInfo'
+import Cards from './components/Cards'
+
+function About({aboutRef}) {
+  const [data] = useState(cardData)
+  const [cardID, setCardID] = useState(null)
+  const [isOpen, setIsOpen] = useState(false)
 
     const handleCardClick = (id) => {
-        setCardID(id)
-        setIsOpen(true)
+    setCardID(id)
+    setIsOpen(true)
     }
 
   return (
@@ -30,10 +27,11 @@ function About( { aboutRef } ) {
         </div>
         <div className = 'blob'></div>
         <div className = 'card-container'>
-        { 
+        {
             data.map(card => {
                 return(
-                    <Cards key = {card.id} info = {card} handleCardClick = {handleCardClick} />
+                    <Cards key = {card.id} info = {card} handleCardClick = {
+      handleCardClick} />
                 )
             })
         }
@@ -48,8 +46,7 @@ function About( { aboutRef } ) {
 
 export default About
 
-
-const StyledAbout = styled.div`
+    const StyledAbout = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

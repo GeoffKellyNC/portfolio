@@ -1,26 +1,19 @@
 import React from 'react';
-
-
+import {CgWebsite} from 'react-icons/cg';
+import {FaGithubSquare} from 'react-icons/fa';
 import styled from 'styled-components';
 
-import { FaGithubSquare } from 'react-icons/fa';
-import { CgWebsite } from 'react-icons/cg';
-
-const Project = ({ projectData, projectID, setIsOpen }) => {
-
-
-
-
-    const project = projectData.find(project => project.id === projectID);
-    if (!projectData.length) return "Loading...";
-
+const Project =
+    ({projectData, projectID, setIsOpen}) => {
+      const project = projectData.find(project => project.id === projectID);
+      if (!projectData.length)
+        return "Loading...";
 
     return(
         <StyledProject className = 'project-card-container'>
             <div className = 'app-img'>
                 <img
-                    src = {project.imageSrc}
-                    alt = 'Project Screenshot'
+    src = {project.imageSrc} alt = 'Project Screenshot'
                     className = 'project-card-img' />
             </div>
             <div className = 'project-card-text'>
@@ -46,12 +39,9 @@ const Project = ({ projectData, projectID, setIsOpen }) => {
 
         </StyledProject>
     )
-} 
-
+    }
 
 export default Project;
-
-
 
 const StyledProject = styled.div`
         border-bottom: 3px solid ${pr => pr.theme.colors.primary};
