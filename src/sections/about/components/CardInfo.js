@@ -1,8 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-function CardInfo({cardID, cardInfo, setIsOpen}) {
-
+function CardInfo({ cardID, cardInfo, setIsOpen }) {
   // useEffect(() => {
 
   //   let cardClass = document.querySelector('.card-info')
@@ -17,27 +16,30 @@ function CardInfo({cardID, cardInfo, setIsOpen}) {
 
   // }, [])
 
-  const selectedCard = cardInfo.find(card => card.id === cardID)
+  const selectedCard = cardInfo.find((card) => card.id === cardID);
 
   return (
-      <StyledCardInfo className = {`${selectedCard.title}-card-info card-info`}>
-      <div className = {`card-info-container ${selectedCard.title}`}>
-      <div>{selectedCard.moreInfo.text}<
-          /div>
-        <button onClick = {() =>{
-          setIsOpen(false)
-          }}>Close</button>
+    <StyledCardInfo className={`${selectedCard.title}-card-info card-info`}>
+      <div className={`card-info-container ${selectedCard.title}`}>
+        <div>{selectedCard.moreInfo.text}</div>
+        <button
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          Close
+        </button>
       </div>
-    </StyledCardInfo>)
+    </StyledCardInfo>
+  );
 }
 
-export default CardInfo
+export default CardInfo;
 
-const StyledCardInfo = styled
-                           .div`
+const StyledCardInfo = styled.div`
   margin: 0;
   padding: 0;
-  font-family: ${props => props.theme.fonts.primary};
+  font-family: ${(props) => props.theme.fonts.primary};
 
   .card-info-container {
     display: flex;
@@ -49,15 +51,14 @@ const StyledCardInfo = styled
     margin: 0 auto;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     padding: 2em;
     position: relative;
-    color: ${props => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.secondary};
   }
 
-
   .About {
-    background: linear-gradient(315deg, #F0A20270, #fa1d1d70);
+    background: linear-gradient(315deg, #f0a20270, #fa1d1d70);
   }
 
   .Technology {
@@ -68,19 +69,21 @@ const StyledCardInfo = styled
     background: linear-gradient(315deg, #4dff03, #00d0ff);
   }
 
-  @media(max-width: 1140px){
-    ${'' /* position: absolute;
+  @media (max-width: 1140px) {
+    ${
+      "" /* position: absolute;
 top: -90em;
 left: 0;
 border-radius: 5px;
 box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 padding: 2em;
-z-index: 1; */}
+z-index: 1; */
+    }
 
     .About {
       width: 100%;
-      height: 40vh;    }
-
+      height: 40vh;
+    }
   }
 
   @media (max-width: 768px) {
@@ -93,8 +96,8 @@ z-index: 1; */}
       padding: 1em;
     }
 
-    .About{
-      background: linear-gradient(315deg, #F0A202, #fa1d1d);
+    .About {
+      background: linear-gradient(315deg, #f0a202, #fa1d1d);
     }
 
     .Technology {
@@ -105,12 +108,4 @@ z-index: 1; */}
       background: linear-gradient(315deg, #4dff03, #00d0ff);
     }
   }
-
-
-
-            
-
-
-
-
-`
+`;
