@@ -24,7 +24,6 @@ const Project = ({ projectData, projectID, setIsOpen }) => {
                     className = 'project-card-img' />
             </div>
             <div className = 'project-card-text'>
-                <h2 className = 'project-title'> { project.title } </h2>
                 <h2 className = 'desc-text'>PROJECT DESCRIPTION:</h2><p className = 'project-desc'>{project.description}</p>
                 <h2 className = 'desc-text'>PROJECT TECHNOLOGIES:</h2><p className = 'project-desc'>{project.technologies.join(', ')}</p>
                 <div className = 'project-link-icons'>
