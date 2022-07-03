@@ -26,8 +26,6 @@ const Projects = ({projectsRef}) => {
                 button.classList.remove('active');
             }
         })
-
-
     }
 
 
@@ -101,8 +99,7 @@ const StyledProjects = styled.div`
         hsl(44, 85%, 66%),
         hsl(89, 85%, 66%),
         hsl(134, 85%, 66%),
-        hsl(179, 85%, 66%)
-        );
+        hsl(179, 85%, 66%));
         background-size: 300% 300%;
         background-position: 0 50%;
         border-radius: calc(2 * var(--border-width));
@@ -128,7 +125,7 @@ const StyledProjects = styled.div`
 
     .project-button {
         background: transparent;
-        border: 2px solid ${pr => pr.theme.colors.secondary};
+        border-bottom: 2px solid ${pr => pr.theme.colors.secondary};
         border-radius: 5px;
         color: ${pr => pr.theme.colors.primary};
         font-family: ${pr => pr.theme.fonts.secondary};
@@ -145,8 +142,22 @@ const StyledProjects = styled.div`
     }
 
     .active {
-        background: ${pr => pr.theme.colors.secondary};
-        color: ${pr => pr.theme.colors.primary};
+        background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+        );
+        background-size: 300% 300%;
+        background-position: 0 50%;
+        animation: moveGradient 4s alternate infinite;
+        color: ${pr => pr.theme.colors.secondary};
+        border: none;
     }
 
   

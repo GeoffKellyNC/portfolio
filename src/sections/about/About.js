@@ -56,6 +56,7 @@ const StyledAbout = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 30em;
+    font-family: ${pr => pr.theme.fonts.secondary};
 
     .about-title {
         margin: 2em 0;
