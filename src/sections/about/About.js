@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./scss/about.scss";
 
 import React, { useState } from "react";
@@ -10,13 +11,8 @@ import Cards from "./components/Cards";
 
 function About({ aboutRef }) {
   const [data] = useState(cardData);
-  const [cardID, setCardID] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
 
-  const handleCardClick = (id) => {
-    setCardID(id);
-    setIsOpen(true);
-  };
+
 
   return (
     <StyledAbout>
@@ -33,18 +29,9 @@ function About({ aboutRef }) {
             <Cards
               key={card.id}
               info={card}
-              handleCardClick={handleCardClick}
             />
           );
         })}
-        {isOpen && (
-          <CardInfo
-            cardID={cardID}
-            cardInfo={data}
-            setIsOpen={setIsOpen}
-            isOpen={isOpen}
-          />
-        )}
       </div>
     </StyledAbout>
   );

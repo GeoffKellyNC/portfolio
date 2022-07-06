@@ -230,6 +230,14 @@ const StyledApp = styled.div`
     color: ${(pr) => pr.theme.colors.secondary};
     font-family: ${(pr) => pr.theme.fonts.primary};
     font-weight: 300;
+    animation: blink 1s step-end infinite;
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
   }
 
   .top-text-container p {
