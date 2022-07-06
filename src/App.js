@@ -14,11 +14,11 @@ import SocialIcons from "./components/SocialIcons";
 import resume from "./data/geoff-kelly-2022.pdf";
 import { socialIcons } from "./data/socialIconsData";
 //--Components --//
-import About from "./sections/about/About";
-import Contact from "./sections/contact/Contact";
-import Footer from "./sections/footer/Footer";
-import Header from "./sections/header/Header";
-import Projects from "./sections/projects/Projects";
+import About from "./views/about/About";
+import Contact from "./views/contact/Contact";
+import Footer from "./views/footer/Footer";
+import Header from "./views/header/Header";
+import Projects from "./views/projects/Projects";
 
 function App() {
   //--State--//
@@ -361,15 +361,15 @@ const StyledApp = styled.div`
     }
 
     .who-text {
-      font-size: ${(pr) => pr.theme.fontSizes.medium};
+      font-size: ${(pr) => pr.theme.fontSizes.small};
     }
 
     .statement-text-type {
-      font-size: ${(pr) => pr.theme.fontSizes.medium};
+      font-size: ${(pr) => pr.theme.fontSizes.small};
     }
 
     .statement-cursor {
-      font-size: ${(pr) => pr.theme.fontSizes.medium};
+      font-size: ${(pr) => pr.theme.fontSizes.small};
     }
   }
 `;
