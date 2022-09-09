@@ -56,7 +56,7 @@
   transform: skewX(0deg);
   left: 20px;
   width: calc(100% - 90px);
-  
+
 }
 
 .container .box:before,
@@ -103,7 +103,7 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   opacity: 0;
-  transition: 0.1s;  
+  transition: 0.1s;
   animation: animate 2s ease-in-out infinite;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08)
 }
@@ -150,7 +150,7 @@
   {
     transform: translateY(10px);
   }
-  
+
   50%
   {
     transform: translate(-10px);
