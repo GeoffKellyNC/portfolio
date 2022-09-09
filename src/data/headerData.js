@@ -1,5 +1,6 @@
 import { v4 as uuid } from 'uuid';
 
+
 export const navData = [
     {   
         id: uuid(),
@@ -23,9 +24,9 @@ export const navData = [
     },
     {   
         id: uuid(),
-        name: 'COMING SOON',
-        to: '/',
-        className: 'nav-link nav-about',
+        name: 'Coming Soon',
+        to: `/`,
+        className: 'nav-link nav-resume',
         num: '04'
     }
 

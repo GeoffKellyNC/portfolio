@@ -2,19 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 function CardInfo({ cardID, cardInfo, setIsOpen }) {
-  // useEffect(() => {
 
-  //   let cardClass = document.querySelector('.card-info')
-  //   const cl = cardClass.classList.value
-
-  //   return cl.includes('About-card-info') ?
-  //   cardClass.style.setProperty('top','-90em') :
-  //   cl.classList.includes('Technology-card-info') ?
-  //   cardClass.style.setProperty('top','-60em') :
-  //   cl.classList.includes('Interests-card-info') ?
-  //   cardClass.style.setProperty('top','-30em') : null
-
-  // }, [])
 
   const selectedCard = cardInfo.find((card) => card.id === cardID);
 

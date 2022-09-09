@@ -133,7 +133,6 @@ const StyledProjects = styled.div`
 
   .project-button {
     background: transparent;
-    border-bottom: 2px solid ${(pr) => pr.theme.colors.secondary};
     border-radius: 5px;
     color: ${(pr) => pr.theme.colors.primary};
     font-family: ${(pr) => pr.theme.fonts.secondary};
@@ -142,6 +141,7 @@ const StyledProjects = styled.div`
     margin: 0.5em;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    border: none;
 
     &:hover {
       background: ${(pr) => pr.theme.colors.secondary};
