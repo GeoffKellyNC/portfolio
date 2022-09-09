@@ -1,6 +1,5 @@
 import { v4 as uuid } from 'uuid';
 
-import resume from './geoff-kelly-2022.pdf'
 
 export const navData = [
     {   
