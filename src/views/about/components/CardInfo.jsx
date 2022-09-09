@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 function CardInfo({ cardID, cardInfo, setIsOpen }) {
-
-
   const selectedCard = cardInfo.find((card) => card.id === cardID);
 
   return (

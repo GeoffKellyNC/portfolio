@@ -1,148 +1,143 @@
-import React, {useState} from 'react';
-import {NavLink} from 'react-router-dom'
-import styled from 'styled-components';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 //!--Navigation Data Import --//
-import {navData} from '../../../data/headerData';
+import { navData } from "../../../data/headerData";
 //!-- Social Icons Data Import --//
-import {socialIcons} from '../../../data/socialIconsData';
+import { socialIcons } from "../../../data/socialIconsData";
 
-const MobileNav = ({handleClick, setIsOpen}) => {
-    const [iconsData] = useState(socialIcons);
+const MobileNav = ({ handleClick, setIsOpen }) => {
+  const [iconsData] = useState(socialIcons);
 
-
-
-
-    return (
-    <MobileNavStyled className = 'mobile-nav'>
-        <div className = 'icons-container'>
-            {iconsData.map(icon => (
-                <li key = {icon.id}>
-                    <a href = {icon.link} className = {`${icon.name}-icon icon`} target = "_blank" rel="noreferrer" >{icon.icon}
-                    </a>
-                </li>
-            ))}
-        </div>
-        <div className = 'top-line'></div>
-        <div className = 'link-container'>
-            {
-                navData.map(item => {
-                    return(
-                        <NavLink 
-                            key={item.id} 
-                            to={item.to} 
-                            className={`${item.className} navLink`}
-                            onClick = {(e) => handleClick(e)}>
-                            <span className = 'nav-num'>{item.num}</span>
-                            <span className = 'nav-name'>{item.name}</span>
-                        </NavLink>
-                    )
-                })
-            }
-        </div>
-        <div className = 'bottom-line'></div>
+  return (
+    <MobileNavStyled className="mobile-nav">
+      <div className="icons-container">
+        {iconsData.map((icon) => (
+          <li key={icon.id}>
+            <a
+              href={icon.link}
+              className={`${icon.name}-icon icon`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {icon.icon}
+            </a>
+          </li>
+        ))}
+      </div>
+      <div className="top-line"></div>
+      <div className="link-container">
+        {navData.map((item) => {
+          return (
+            <NavLink
+              key={item.id}
+              to={item.to}
+              className={`${item.className} navLink`}
+              onClick={(e) => handleClick(e)}
+            >
+              <span className="nav-num">{item.num}</span>
+              <span className="nav-name">{item.name}</span>
+            </NavLink>
+          );
+        })}
+      </div>
+      <div className="bottom-line"></div>
     </MobileNavStyled>
-    )
-}
-
+  );
+};
 
 export default MobileNav;
 
-
 const MobileNavStyled = styled.nav`
-            margin-top: 20%;
-            background-color: ${pr => pr.theme.colors.secondary};
-            width: 100%;
-            height: 100%;
-            box-shadow: 0 10px 20px -10px black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            transition: all 0.3s ease-in-out;
-       
-        .link-container a {
-            text-decoration: none;
-            color: ${pr => pr.theme.colors.primary};
-            font-family: ${pr => pr.theme.fonts.primary};
-            font-size: ${pr => pr.theme.fontSizes.medium};
-            font-weight: 900;
-            display: flex;
-            justify-content: center;
-            text-transform: uppercase;
-            width: 100%;
-            height: 12%;
-            padding: 0.5rem 0;
-            margin: 0;
-        }
+  margin-top: 20%;
+  background-color: ${(pr) => pr.theme.colors.secondary};
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 20px -10px black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
 
-        li {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 12%;
-            padding: 0.5rem 0;
-            margin: 0;
-        }
-        .nav-num {
-            margin-right: 1rem;
-            color: ${pr => pr.theme.colors.black};
-        }
+  .link-container a {
+    text-decoration: none;
+    color: ${(pr) => pr.theme.colors.primary};
+    font-family: ${(pr) => pr.theme.fonts.primary};
+    font-size: ${(pr) => pr.theme.fontSizes.medium};
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    width: 100%;
+    height: 12%;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
 
-    .nav-name{
-        font-weight: ${pr => pr.theme.fontWeights.normal};
-    }
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12%;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+  .nav-num {
+    margin-right: 1rem;
+    color: ${(pr) => pr.theme.colors.black};
+  }
 
-        .link-container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            ${'' /* padding: 0.5rem; */}
-            margin: 0;
-        }
+  .nav-name {
+    font-weight: ${(pr) => pr.theme.fontWeights.normal};
+  }
 
-        .top-line{
-            width: 100%;
-            height: 1em;
-            background-color: ${pr => pr.theme.colors.black};
-            position: relative;
-            top: 20%;
-            left: 0;
-        }
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    ${"" /* padding: 0.5rem; */}
+    margin: 0;
+  }
 
-        .bottom-line{
-            width: 100%;
-            height: 1em;
-            background-color: ${pr => pr.theme.colors.black};
-            position: absolute;
-            bottom: 25%;
-            left: 0;
-        }
+  .top-line {
+    width: 100%;
+    height: 1em;
+    background-color: ${(pr) => pr.theme.colors.black};
+    position: relative;
+    top: 20%;
+    left: 0;
+  }
 
-        .icons-container{
-            display: flex;
-            position: absolute;
-            top: 14%;
-            left: 0;
-            width: 100%;
-            justify-content: space-around;
-        }
+  .bottom-line {
+    width: 100%;
+    height: 1em;
+    background-color: ${(pr) => pr.theme.colors.black};
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+  }
 
-        .icons-container a{
-            text-decoration: none;
-            color: ${pr => pr.theme.colors.primary};
-            font-family: ${pr => pr.theme.fonts.secondary};
-            font-size: ${pr => pr.theme.fontSizes.medium};
-            font-weight: ${pr => pr.theme.fontWeights.normal};
-        }
+  .icons-container {
+    display: flex;
+    position: absolute;
+    top: 14%;
+    left: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
 
-
-
-
-
-`
+  .icons-container a {
+    text-decoration: none;
+    color: ${(pr) => pr.theme.colors.primary};
+    font-family: ${(pr) => pr.theme.fonts.secondary};
+    font-size: ${(pr) => pr.theme.fontSizes.medium};
+    font-weight: ${(pr) => pr.theme.fontWeights.normal};
+  }
+`;
