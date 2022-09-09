@@ -1,9 +1,9 @@
-import styled from 'styled-components'
 import React from 'react'
+import styled from 'styled-components'
+
 import ContactForm from './components/ContactForm'
 
-
-function Contact({ contactRef }) {
+function Contact({contactRef}) {
   return (
     <ContactStyled>
         <div className = 'title-container'>

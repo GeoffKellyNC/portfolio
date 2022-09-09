@@ -1,29 +1,20 @@
 //!-- React Imports --//
-import React, { useState } from 'react';
-
+import React, {useState} from 'react';
+import {AiOutlineClose} from 'react-icons/ai';
+//!-- Importing Mobile Menu icon --//
+import {BiMenuAltLeft} from 'react-icons/bi';
 //! -- React Router Dom Imports -- //
-import { NavLink } from 'react-router-dom'
-
-//!-- Importing MobileNav component --//
-import MobileNav from './components/MobileNav'
-
+import {NavLink} from 'react-router-dom'
 //!--Importing Styled Components --// <--At bottom of file --
 import styled from 'styled-components';
 
 //!--Navigation Data Import --//
-import { navData } from '../../data/headerData';
+import {navData} from '../../data/headerData';
 
-//!-- Importing Mobile Menu icon --//
-import { BiMenuAltLeft } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
+//!-- Importing MobileNav component --//
+import MobileNav from './components/MobileNav'
 
-
-
-
-
-
-
-const Header = ({ handleProjectClick, handleContactClick, handleAboutClick }) => {
+const Header = ({handleProjectClick, handleContactClick, handleAboutClick}) => {
     //! State for Mobile Menu
     const [isOpen, setIsOpen] = useState(false);
 

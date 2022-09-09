@@ -1,16 +1,12 @@
 /* eslint-disable no-unused-vars */
 import "./scss/about.scss";
+
 import React from "react";
 import styled from "styled-components";
 
 import Tech from './components/Tech'
 
-
-
-
-
-function About({ aboutRef }) {
-
+function About({aboutRef}) {
 
   return (
     <StyledAbout>

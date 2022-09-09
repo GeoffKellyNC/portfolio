@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import "./App.scss";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 // -- Icons --//
-import { AiOutlineArrowDown } from "react-icons/ai";
+import {AiOutlineArrowDown} from "react-icons/ai";
 //-- Importing Site Loader --//
 import RingLoader from "react-spinners/RingLoader";
 //--Importing Styled Components --// <--At bottom of file --
@@ -12,7 +12,7 @@ import Typewriter from "typewriter-effect";
 
 import SocialIcons from "./components/SocialIcons";
 import resume from "./data/geoff-kelly-2022.pdf";
-import { socialIcons } from "./data/socialIconsData";
+import {socialIcons} from "./data/socialIconsData";
 //--Components --//
 import About from "./views/about/About";
 import Contact from "./views/contact/Contact";
@@ -31,30 +31,27 @@ function App() {
 
   //-- Click Handlers --//
   const handleProjectClick = () => {
-    projectsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    projectsRef.current.scrollIntoView({behavior : "smooth", block : "start"});
   };
 
   const handleContactClick = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    contactRef.current.scrollIntoView({behavior : "smooth", block : "start"});
   };
 
   const handleAboutClick = () => {
-    aboutRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    aboutRef.current.scrollIntoView({behavior : "smooth", block : "start"});
   };
 
   // -- Site Pre Loader --//
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
+  useEffect(() => { setTimeout(() => { setLoading(false); }, 2000); }, []);
 
   return (
     <StyledApp className="App">
       {loading ? ( //-- Loading Screen --//
         <div className="loader">
-          <RingLoader color={"red"} loading={loading} size={"10em"} />
+          <RingLoader color={"red"} loading={loading} size={
+    "10em"} />
         </div>
       ) : (
         <>
@@ -75,15 +72,13 @@ function App() {
               </div>
               <div className="name-text">
                 <Typewriter
-                  options={{
-                    cursor: "|",
-                    wrapperClassName: "text",
-                    cursorClassName: "text-cursor",
-                    delay: 100,
-                  }}
-                  onInit={(typewriter) => {
-                    typewriter.typeString("Geoff Kelly").start();
-                  }}
+                  options={
+    {
+      cursor: "|", wrapperClassName: "text", cursorClassName: "text-cursor",
+          delay: 100,
+    }}
+                  onInit={
+    (typewriter) => { typewriter.typeString("Geoff Kelly").start(); }}
                 />
               </div>
               <div className="statement-text">
@@ -136,13 +131,16 @@ function App() {
             </div>
           </section>
           <section className="projects-container">
-            <Projects projectsRef={projectsRef} />
+            <Projects projectsRef={
+    projectsRef} />
           </section>
           <section className="about-container">
-            <About aboutRef={aboutRef} />
+            <About aboutRef={
+    aboutRef} />
           </section>
           <section className="contact-container">
-            <Contact contactRef={contactRef} />
+            <Contact contactRef={
+    contactRef} />
           </section>
           <section className="footer-container">
             <Footer />

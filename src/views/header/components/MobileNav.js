@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {NavLink} from 'react-router-dom'
 import styled from 'styled-components';
 
-import { NavLink } from 'react-router-dom'
-
-
 //!--Navigation Data Import --//
-import { navData } from '../../../data/headerData';
-
+import {navData} from '../../../data/headerData';
 //!-- Social Icons Data Import --//
-import { socialIcons } from '../../../data/socialIconsData';
+import {socialIcons} from '../../../data/socialIconsData';
 
-
-
-const MobileNav = ({  handleClick, setIsOpen }) => {
+const MobileNav = ({handleClick, setIsOpen}) => {
     const [iconsData] = useState(socialIcons);
 
 

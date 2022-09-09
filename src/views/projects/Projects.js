@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 //! -- Importing Project Images -- //
 
 //! -- Import Project Data -- //
-import { projectData } from "../../data/projectsData";
+import {projectData} from "../../data/projectsData";
 
 import Project from "./components/Project";
 
@@ -20,22 +20,19 @@ const Projects = ({ projectsRef }) => {
     button.classList.toggle("active");
     const buttons = document.querySelectorAll(".project-button");
     buttons.forEach((button) => {
-      if (
-        button.classList.contains("active") &&
-        button !== document.querySelector(`.project-${id}`)
-      ) {
+      if (button.classList.contains("active") &&
+          button !== document.querySelector(`.project-${id}`)) {
         button.classList.remove("active");
       }
     });
   };
 
   return (
-    <StyledProjects className="project-container" ref={projectsRef}>
-      <div className="project-title">
-        <h1>
-          <span className="num-title">01. </span>
+      <StyledProjects className = "project-container" ref = {projectsRef}>
+      <div className = "project-title"><h1><span className = "num-title">01. <
+      /span>
           Projects
-        </h1>
+        </h1 >
       </div>
       <div className="project-button-container">
         {projectInfo.map((project) => {
@@ -49,9 +46,9 @@ const Projects = ({ projectsRef }) => {
             >
               {" "}
               {project.title}
-            </button>
-          );
-        })}
+            </button>);
+        })
+}
       </div>
       {isOpen ? (
         <Project
@@ -63,16 +60,18 @@ const Projects = ({ projectsRef }) => {
         <Project
           projectData={projectData}
           projectID={projectData[0].id}
-          setIsOpen={setIsOpen}
+          setIsOpen={
+  setIsOpen}
         />
       )}
     </StyledProjects>
   );
-};
+          }
+          ;
 
-export default Projects;
+          export default Projects;
 
-const StyledProjects = styled.div`
+          const StyledProjects = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
