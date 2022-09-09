@@ -1,5 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
+import resume from './geoff-kelly-2022.pdf'
+
 export const navData = [
     {   
         id: uuid(),
@@ -23,9 +25,9 @@ export const navData = [
     },
     {   
         id: uuid(),
-        name: 'COMING SOON',
-        to: '/',
-        className: 'nav-link nav-about',
+        name: 'Coming Soon',
+        to: `/`,
+        className: 'nav-link nav-resume',
         num: '04'
     }
 

@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 import "./scss/about.scss";
-
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+
+import Tech from './components/Tech'
+
 
 
 
 
 function About({ aboutRef }) {
-
 
 
   return (
@@ -21,11 +22,15 @@ function About({ aboutRef }) {
       </div>
       <div className="about-content">
         <div className="about-text">
-            <p>
-              I'm a full-stack web developer with a passion for creating beautiful
-              and functional websites. I'm currently looking for a position in
-              the field of web development.
+            <p className="a-text">
+              I love using technologies to bring ideas to life and make improve the quality of peoples lives. I feel my unique life experiences, give me a unique perspective on the world, and I want to combine that experience with my skills to create a better world, through technology.
             </p>
+            <p className="b-text">
+              Technologies that I have worked with are:
+            </p>
+            <Tech />
+            <div className = 'github-img-container'>
+            </div>
           </div>
           <div className="blob"></div>
         </div>
@@ -53,8 +58,6 @@ const StyledAbout = styled.div`
         color: ${(pr) => pr.theme.colors.secondary};
     }
 
-
-
     .about-content{
         display: flex;
         flex-direction: row;
@@ -67,16 +70,35 @@ const StyledAbout = styled.div`
 
     .about-text {
         margin: 2em 0;
-        font-size: ${(pr) => pr.theme.fontSizes.small};
+        font-size: ${(pr) => pr.theme.fontSizes.tiny};
         color: ${(pr) => pr.theme.colors.primary};
-        font-family: ${(pr) => pr.theme.fonts.secondary};
-        width: 40%;
+        font-family: ${(pr) => pr.theme.fonts.primary};
+        width: 30%;
+        line-height: 2em;
+        position: relative;
     }
 
-    @media (max-width: 768px) {
-        .card-container {
-            flex-direction: column;
-      }
+    .about-text-hover{
+        color: ${pr => pr.theme.colors.secondary};
+    }
+
+    @media (max-width: 1000px) {
+        margin: 10em 0;
+
+        .about-content{
+            flex-direction: column-reverse;
+        }
+
+        .about-text {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .blob {
+          width: 85%;
+        }
+
+
     }
 
 

@@ -46,15 +46,12 @@ const StyledProject = styled.div`
         margin: auto;
         border-radius: 5px;
         display: flex;
-
-
     .project-card-img {
         margin-top: 2em;
         padding: 1em;
         width: 500px;
         height: 600px;
     }
-
     .project-card-text {
         display: flex;
         flex-direction: column;
@@ -63,24 +60,19 @@ const StyledProject = styled.div`
         padding-left: 8%;
         gap: 2em;
     }
-
     .project-card-text h2 {
         color: ${(pr) => pr.theme.colors.secondary};
     }
-
     .project-card-text span {
         font-size: ${(pr) => pr.theme.fontSizes.small};
         margin-top: 5px;
     }
-
     .project-title{
        color: ${(pr) => pr.theme.colors.secondary};
     }
-
     .project-desc{
         width: 80%;
     }
-
     .project-link-icons {
         display: flex;
         flex-direction: row;
@@ -90,56 +82,45 @@ const StyledProject = styled.div`
         margin-top: 2em;
         gap: 5em;
     }
-
     .github-icon {
         color: ${(pr) => pr.theme.colors.secondary};
         font-size: 5rem;
     }
-
     .website-icon {
         color: ${(pr) => pr.theme.colors.secondary};
         font-size: 5rem;
     }
-
     .github-icon:hover {
         color: ${(pr) => pr.theme.colors.primary};
         transform: scale(1.2);
         transition: all .2s ease-in-out;
    }
-
     .website-icon:hover {
         color: ${(pr) => pr.theme.colors.primary};
         transform: scale(1.2);
         transition: all .2s ease-in-out;
     }
-
     @media (max-width: 1000px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 80%;
-
-
         .project-card-text{
             display: flex;
             flex-direction: column;
             padding: 0;
         }
-
         .project-card-img {
             width: 250px;
             height: 400px;
             margin-top: 2em;
         }
-
         .project-desc{
             margin-top: 1em;
         }
-
         .github-icon {
             font-size: 3rem;
         }
     }
-
 `;

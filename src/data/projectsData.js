@@ -5,9 +5,20 @@ import stewartFastenerHome from '../images/stewart-fastener.webp';
 import apexTobaccoHome from '../images/apex-tobacco-home.webp';
 import appTracker from '../images/app-tracker.webp';
 import blockChainApp from '../images/crypto-app.png';
+import berryBot from '../images/berry-bot.png';
 
 
 export const projectData = [
+    {
+        id: uuid(),
+        title: 'Berry Twitch Bot',
+        description: 'Berry Bot is a full Stack Twitch Bot / API built to assist streamers make their streaming experience more streamlined. There are many features such as, a chat bot that moderates your chat, responds to users requests and commands. The ability to control ads on channel. Point tracking system for misbehaving users. Full Authentication system through twitch. Ability to start polls, see moderation stats, channel stats and more. Work in progress with many more features to come.',
+        imageSrc: berryBot,
+        technologies:  ['ReactJS', 'Redux', 'Styled-Components', 'Node.JS', 'Express', 'JWT','TWITCH API', 'TWURPLE', 'React Router V6', 'SQL', 'MySQL', 'bycrypt', 'Axios', 'Git'],
+        githubLink: 'https://github.com/GeoffKellyNC',
+        liveLink: 'https://berrytwitchbot.netlify.app/'
+
+    },
     {
         id: uuid(),
         title: 'Blockchain Info',
