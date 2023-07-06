@@ -15,7 +15,9 @@ export const projectData = [
         imageSrc: blockChainApp,
         technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'JavaScript', 'Redux', 'API'],
         githubLink: 'https://github.com/GeoffKellyNC/crypto-app-2.0',
-        liveLink: 'https://gk-cryptotracker.netlify.app/'
+        liveLink: 'https://gk-cryptotracker.netlify.app/',
+        previewImg:'',
+        previewTitle: '',
     },
     {
         id: uuid(),
@@ -25,6 +27,8 @@ export const projectData = [
         technologies: ['ReactJS', 'VSCode', 'Git', 'API', 'NODE', 'JavaScript'],
         githubLink: 'https://github.com/GeoffKellyNC/stewart-fastener-site',
         liveLink: 'https://stewart-fastener-site.vercel.app/',
+        previewImg:'',
+        previewTitle: '',
     },
     {
         id: uuid(),
@@ -33,7 +37,9 @@ export const projectData = [
         imageSrc: apexTobaccoHome,
         technologies: ['ReactJS', 'VSCode', 'Git', 'NODE', 'JavaScript'],
         githubLink: 'https://github.com/GeoffKellyNC/apex-tobacco',
-        liveLink: 'https://apex-tobacco.vercel.app/'
+        liveLink: 'https://apex-tobacco.vercel.app/',
+        previewImg:'',
+        previewTitle: '',
     },
     {
         id: uuid(),
@@ -42,7 +48,9 @@ export const projectData = [
         imageSrc: appTracker,
         technologies: ['ReactJS', 'VSCode', 'Git', 'Cypress', 'NODE', 'JavaScript', 'Redux', 'API', 'PostgreSQL'],
         githubLink: 'https://github.com/GeoffKellyNC/job-tracker-app',
-        liveLink: 'https://job-app-tracker-gk.netlify.app/'
+        liveLink: 'https://job-app-tracker-gk.netlify.app/',
+        previewImg:'',
+        previewTitle: '',
     },
 
 ];

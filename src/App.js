@@ -180,7 +180,6 @@ const StyledApp = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 5em;
     margin-left: 2em;
   }
 
